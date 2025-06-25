@@ -1,0 +1,41 @@
+
+.Our-Doctors {
+  padding: 40px;
+  background-color: #f4f6fc;
+}
+
+.doctor-image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  text-align: center;
+  color: hsla(33, 60%, 3%, 0.977);
+}
+
+.dr-img {
+  background-color: rgba(106, 142, 248, 0.862);
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.dr-img:hover {
+  transform: scale(1.05);
+}
+
+.dr-img img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.dr-img p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 500;
+}

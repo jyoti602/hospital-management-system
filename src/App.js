@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, useLocation } from 'react-router-dom';
+import AppRouter from './router/AppRouter';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './pages/Part/Footer/Footer';
+
+const PUBLIC_ROUTES = [
+  '/', '/home', '/about-us', '/services', '/contact', '/feature', '/appointment', '/login'
+];
+
+function AppContent() {
+  const location = useLocation();
+  const isPublic = PUBLIC_ROUTES.includes(location.pathname);
+
+  return (
+    <>
+      {isPublic && <Navbar />}
+      <AppRouter />
+      {isPublic && <Footer />}
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

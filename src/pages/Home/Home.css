@@ -1,0 +1,42 @@
+
+.slider-section {
+  display: flex;
+}
+
+.left-container {
+  flex: 1;
+  background-color: #09a73d;
+  color: aliceblue;
+  height: 500px;
+  font-size: 33px;
+}
+
+.left-container h1 {
+  padding: 32px;
+}
+
+.count-section {
+  display: flex;
+  font-size: 22px;
+  gap: 15px;
+  padding-left: 32px;
+      font-weight: 700;
+}
+
+.child-section {
+  border-left: 1px solid white;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.child-section p {
+  margin: 0px;
+}
+
+.right-container {
+  flex: 1;
+  background-image: url('../../../public/images/carousel-1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}

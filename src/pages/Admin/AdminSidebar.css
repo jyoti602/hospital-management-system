@@ -1,0 +1,128 @@
+.admin-sidebar {
+  width: 220px;
+  background: #f8fafc;
+  color: #232946;
+  padding: 2rem 1rem 1rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 2px 0 8px rgba(44,62,80,0.08);
+  transition: width 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+.admin-sidebar .sidebar-logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+.admin-sidebar .sidebar-logo img {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #e0e7ef;
+}
+.admin-sidebar .sidebar-logo span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2563eb;
+  letter-spacing: 1px;
+}
+.admin-sidebar h2 {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #eebbc3;
+  display: none;
+}
+.admin-sidebar .sidebar-menu {
+  flex: 1 1 auto;
+  width: 100%;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+.admin-sidebar li {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.admin-sidebar a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #232946;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+}
+.admin-sidebar a.active,
+.admin-sidebar a[aria-current="page"],
+.admin-sidebar a:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .admin-sidebar {
+    width: 60px;
+    padding: 1rem 0.5rem;
+    align-items: center;
+  }
+  .admin-sidebar .sidebar-logo span {
+    display: none;
+  }
+  .admin-sidebar .sidebar-menu {
+    padding: 0;
+    align-items: center;
+  }
+  .admin-sidebar a {
+    font-size: 0.0px;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+  }
+  .admin-sidebar a:before {
+    content: attr(data-icon);
+    font-size: 1.3rem;
+    display: inline-block;
+    margin-right: 0;
+    color: #2563eb;
+  }
+  .admin-sidebar + main {
+    margin-left: 60px;
+  }
+}
+
+.admin-logout-btn {
+  width: 100%;
+  margin-top: auto;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 0.5rem;
+}
+.admin-logout-btn:hover {
+  background: #1e40af;
+  color: #fff;
+} 

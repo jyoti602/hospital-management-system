@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  background-color: antiquewhite;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.right-box {
+  flex: 1;
+  padding: 20px;
+}
+
+.left-box {
+  flex: 1;
+  padding: 20px;
+}
+
+.read-more-btn {
+  border-radius: 50px;
+  height: 40px;
+  width: 100px;
+  background-color: blue;
+  color: white;
+  margin-left: 40px;
+  border: none;
+  cursor: pointer;
+}

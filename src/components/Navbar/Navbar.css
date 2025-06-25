@@ -1,0 +1,97 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    font-family: math;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background: white;
+}
+
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.appointment-button button {
+    padding: 8px;
+    background-color: #09a73d;
+    border: none;
+}
+
+ 
+
+.button {
+    color: white;
+}
+h3{
+color: white;
+}
+
+/* Dropdown menu styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hover-underline {
+      color: white;
+      font-size: 2em;
+      font-family: Arial, sans-serif;
+      position: relative;
+      padding: 6px;
+    }
+
+    .hover-underline::before,
+    .hover-underline::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(to right, red, cyan);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .hover-underline::before {
+      top: 0;
+      left: 0;
+      transform-origin: right;
+    }
+
+    .hover-underline::after {
+      bottom: 0;
+      left: 0;
+      transform-origin: left;
+    }
+
+    .hover-underline:hover::before,
+    .hover-underline:hover::after {
+      transform: scaleX(1);
+    }

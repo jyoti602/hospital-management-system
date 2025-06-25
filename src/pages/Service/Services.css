@@ -1,0 +1,53 @@
+.services-container {
+  background-color: #fdfdfd;
+}
+
+.services-title h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.services img{
+  border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.card {
+  background: #73a5f7a4;
+  padding: 1.5em;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h1 {
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin: 10px 0;
+}
+
+.icon img {
+  border-radius: 50%;
+}
+
+.services-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #004aad;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+}

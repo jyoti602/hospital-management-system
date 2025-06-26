@@ -1,7 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup'; // <-- Import CountUp
 import './Home.css';
-import AppointmentForm from '../AppointmentForm/AppointmentForm';
+import AppointmentForm from '../../components/AppointmentForm/AppointmentForm';
 import AboutUs from '../AboutUs/AboutUs';
 import Services from '../Service/Services';
 import Contact from '../Contact/Contact';

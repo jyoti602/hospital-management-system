@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import AppointmentForm from '../pages/AppointmentForm/AppointmentForm';
+import AppointmentForm from '../components/AppointmentForm/AppointmentForm';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import Services from '../pages/Service/Services';
 import Contact from '../pages/Contact/Contact';

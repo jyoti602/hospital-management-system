@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import "./Login.css";
+import axios from "axios";
+
 
 // Yup validation schema
 const schema = Yup.object().shape({
@@ -23,34 +25,40 @@ const Login = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    const { email, password, userType } = data;
-    // Mock credentials for demonstration
-    if (userType === "admin" && email === "admin@example.com" && password === "12345") {
-      setErrorMassage("");
+  const onSubmit = async (data) => {
+    try {
+    console.log(data)
+    const response = await axios.post("http://localhost:4000/api/login", data); // replace with your actual endpoint
+    const { success, role } = response.data;
+
+    setErrorMassage(""); // clear error
+
+    if (success && role === "admin") {
       localStorage.setItem("isAdmin", "true");
       localStorage.removeItem("isPatient");
       localStorage.removeItem("isDoctor");
       navigate("/admin");
-    } else if (userType === "patient" && email === "patient@example.com" && password === "12345") {
-      setErrorMassage("");
+    } else if (success && role === "patient") {
       localStorage.setItem("isPatient", "true");
       localStorage.removeItem("isAdmin");
       localStorage.removeItem("isDoctor");
       navigate("/patient");
-    } else if (userType === "doctor" && email === "doctor@example.com" && password === "12345") {
-      setErrorMassage("");
+    } else if (success && role === "doctor") {
       localStorage.setItem("isDoctor", "true");
       localStorage.removeItem("isAdmin");
       localStorage.removeItem("isPatient");
       navigate("/doctor");
     } else {
-      setErrorMassage("Invalid username, password, or user type");
-      localStorage.removeItem("isAdmin");
-      localStorage.removeItem("isPatient");
-      localStorage.removeItem("isDoctor");
+      throw new Error("Invalid credentials or user type");
     }
-  };
+  } catch (error) {
+    setErrorMassage(error.response?.data?.message || "Invalid username, password, or user type");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("isPatient");
+    localStorage.removeItem("isDoctor");
+  }
+};
+
 
   return (
     <div className="login-container">

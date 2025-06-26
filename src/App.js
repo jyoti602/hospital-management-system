@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
-import AppRouter from './router/AppRouter';
+import AppRouter from './services/AppRouter';
 import Navbar from './components/Navbar/Navbar';
-import Footer from './pages/Part/Footer/Footer';
+import Footer from './parts/Footer/Footer';
 
 const PUBLIC_ROUTES = [
   '/', '/home', '/about-us', '/services', '/contact', '/feature', '/appointment', '/login'
@@ -16,7 +16,7 @@ function AppContent() {
     <>
       {isPublic && <Navbar />}
       <AppRouter />
-      {isPublic && <Footer />}
+      {isPublic && <Footer/>}
     </>
   );
 }

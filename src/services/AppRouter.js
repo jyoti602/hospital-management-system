@@ -9,18 +9,7 @@ import Feature from '../pages/Feature/Feature';
 import Doctor from '../pages/Doctor/Doctor';
 import AdminLayout from '../pages/Admin/AdminLayout';
 import AdminDashboard from '../pages/Admin/Dashboard';
-import Departments from '../pages/Admin/Departments';
-import Doctors from '../pages/Admin/Doctors';
-import Staff from '../pages/Admin/Staff';
-import Inventory from '../pages/Admin/Inventory';
-import Billing from '../pages/Admin/Billing';
-import Reports from '../pages/Admin/Reports';
-import ProtectedRoute from './ProtectedRoute';
-import ProtectedRoutePatient from './ProtectedRoutePatient';
-import ProtectedRouteDoctor from './ProtectedRouteDoctor';
-import Login from '../pages/Login/Login';
-import Patient from '../pages/Patient/Patient';
-import DoctorDashboard from '../pages/Doctor/DoctorDashboard';
+import Login from '../components/Login/Login';
 
 const AppRouter = () => {
   return (
@@ -37,23 +26,7 @@ const AppRouter = () => {
       {/* Admin Portal Nested Routes */}
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="dashboard" element={<AdminDashboard />} />
-        <Route path="departments" element={<Departments />} />
-        <Route path="doctors" element={<Doctors />} />
-        <Route path="staff" element={<Staff />} />
-        <Route path="inventory" element={<Inventory />} />
-        <Route path="billing" element={<Billing />} />
-        <Route path="reports" element={<Reports />} />
       </Route>
-      <Route path="/patient" element={
-        <ProtectedRoutePatient>
-          <Patient />
-        </ProtectedRoutePatient>
-      } />
-      <Route path="/doctor" element={
-        <ProtectedRouteDoctor>
-          <DoctorDashboard />
-        </ProtectedRouteDoctor>
-      } />
     </Routes>
   );
 };

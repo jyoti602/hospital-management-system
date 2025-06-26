@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import './Contact.css'; // NEW CSS file (separate from AppointmentForm.css)
-
+import axios from 'axios';
 // Yup validation schema
 const schema = yup.object().shape({
   fullName: yup.string().required('Full name is required'),
@@ -23,8 +23,9 @@ const Contact = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log('Contact Form Data:', data);
+  const onSubmit = async (data) => {
+    const res= await axios.post("http://localhost:4000/api/contact",data)
+    console.log('Contact Form res:', res);
     alert('Message sent successfully!');
     reset();
   };

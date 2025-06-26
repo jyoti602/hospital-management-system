@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './AppointmentForm.css';
+import axios from "axios";
 
 // Validation schema using Yup
 const schema = yup.object().shape({
@@ -36,7 +37,7 @@ const {
   },    
 });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const formattedDate = data.appointmentDateTime.toLocaleString('en-IN', {
       day: '2-digit',
       month: '2-digit',
@@ -46,12 +47,14 @@ const {
       hour12: true,
     });
 
-    console.log('Appointment Data:', {
+    const payload ={
       ...data,
       appointmentDateTime: formattedDate,
-    });
-
-    alert('Appointment booked on: ' + formattedDate);
+    };
+    
+  const response = await axios.post("http://localhost:4000/api/appointment", payload); // replace with your actual endpoint
+    const { success, role } = response.data;
+    
   };
 
   return (

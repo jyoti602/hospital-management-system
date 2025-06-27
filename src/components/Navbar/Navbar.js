@@ -1,46 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronDown, ChevronUp, Menu,ArrowRight, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
   return (
-    <nav className="nav-bar sticky-top">
-      <div>
-        <img src="images/company_logo.jpg" alt="Company Logo" height="50px" width="100px" />
+    <nav className="nav-bar">
+      <div className="nav-left">
+        <img src="/images/company_logo.jpg" alt="Logo" className="logo" />
       </div>
 
-      <div className="nav-menu">
-        <Link to="/home">Home</Link>
-        <Link to="/about-us">About</Link>
-        <Link to="/services">Service</Link>
-        
+      <div className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
+        <Link to="/home" onClick={toggleMobileMenu}>Home</Link>
+        <Link to="/about-us" onClick={toggleMobileMenu}>About</Link>
+        <Link to="/services" onClick={toggleMobileMenu}>Service</Link>
 
-        <div className="dropdown">
-          <Link className="dropbtn" to="#">Pages</Link>
-          <div className="dropdown-content">
-            <Link to="/feature">Feature</Link>
-            <Link to="/appointment">Appointment</Link>
-            <Link to="/doctor">Doctor</Link>
+        <div className="dropdown" onClick={toggleDropdown}>
+          <div className="dropbtn">
+            Pages {dropdownOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
           </div>
+          {dropdownOpen && (
+            <div className="dropdown-content">
+              <Link to="/feature" onClick={toggleMobileMenu}>Feature</Link>
+              <Link to="/appointment" onClick={toggleMobileMenu}>Appointment</Link>
+              <Link to="/doctor" onClick={toggleMobileMenu}>Doctor</Link>
+            </div>
+          )}
         </div>
 
-        <Link to="/contact">Contact</Link>
-        <Link to="/login">Login</Link>
-      </div>
-      <div className="hover-underline">
+        <Link to="/contact" onClick={toggleMobileMenu}>Contact</Link>
+        <Link to="/login" onClick={toggleMobileMenu}>Login</Link>
 
-      <div className="appointment-button">
-        
-          <Link to="/appointment">
-            <button>
-            <h3>Appointment →</h3>
-            </button>
+        <div className="appointment-button">
+          <Link to="/appointment" onClick={toggleMobileMenu}>
+            <button>  Appointment <ArrowRight size={16} /></button>
           </Link>
         </div>
-        </div>
+      </div>
+
+      <div className="mobile-toggle" onClick={toggleMobileMenu}>
+        {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+      </div>
     </nav>
   );
 };
 
 export default Navbar;
-

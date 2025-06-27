@@ -63,12 +63,10 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-        <img src="images/company_logo.jpg" alt="Company Logo" height="50px" width="100px" />
-        <h2>
-          MediCare Portal
-          <br />
-          Hospital Management System
-        </h2>
+        <div className="login-top-section">
+        {/* <img src="images/company_logo.jpg" alt="Company Logo" height="50px" width="100px" /> */}
+         <p> Login </p>
+          </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="input-group">

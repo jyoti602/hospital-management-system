@@ -1,0 +1,82 @@
+.uro-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+.uro-header {
+  background-color: #e0f2fe;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.uro-header h1 {
+  color: #0369a1;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.uro-header p {
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+.uro-section {
+  background-color: #f8fafc;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.uro-section h2 {
+  color: #0f172a;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.uro-section ul {
+  padding-left: 1.5rem;
+}
+
+.uro-section li {
+  margin-bottom: 0.6rem;
+  color: #334155;
+}
+
+.uro-section p {
+  color: #334155;
+  font-size: 1rem;
+}
+
+.uro-footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+  font-style: italic;
+  color: #64748b;
+}
+.back-btn {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #0369a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #0284c7;
+}

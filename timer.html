@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Timing</h2>
+
+<p>Click "Click on ". Wait 3 seconds, and the page will alert "Hello".</p>
+
+<button style="font-size:50px" onclick="setTimeout(myFunction);">Click on </button>
+
+<script>
+function myFunction() {
+ const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+   let index = 0;
+   const element = document.getElementsByTagName("button");
+   element[0].style.color = "black";
+   
+
+   
+   
+ setInterval(() => {
+    element[0].style.background = colors[index];
+    index = (index + 1) % colors.length; // Loop through the colors
+  }, 1000);
+
+}
+</script>
+
+</body>
+</html>

@@ -5,42 +5,53 @@
 .services-title h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #333;
+  color: #004aad;
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
 .services {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
 }
-.services img{
+
+.services img {
   border-radius: 50%;
-    height: 60px;
-    width: 60px;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 .card {
-  background: #73a5f7a4;
-  padding: 1.5em;
+  background: #e3f0ff;
+  padding: 1.8em 1.2em;
   border-radius: 20px;
-  width: 300px;
+  width: 280px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card h1 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  margin: 10px 0 5px;
   color: #111;
 }
 
 .card p {
   font-size: 0.95rem;
-  margin: 10px 0;
-}
-
-.icon img {
-  border-radius: 50%;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.4;
 }
 
 .services-button {
@@ -50,4 +61,10 @@
   color: white;
   border-radius: 25px;
   cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.services-button:hover {
+  background-color: #00307e;
 }

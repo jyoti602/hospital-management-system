@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AboutUs.css'; // Link to the CSS file
 
 const AboutUs = () => {
+   const navigate = useNavigate();
   return (
     <div className="container">
       <div className="right-box">
@@ -22,7 +24,7 @@ const AboutUs = () => {
           <li>Medical Research Professionals</li>
             </ul>
         <div className="button">
-          <button className="read-more-btn">Read more</button>
+          <button onClick={() => navigate("/nova-care")}>Read more</button>
         </div>
       </div>
 

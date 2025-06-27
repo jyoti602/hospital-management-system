@@ -1,0 +1,55 @@
+.cardiology-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9ff;
+  color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardiology-header h1 {
+  color: #d32f2f;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cardiology-header p {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.cardiology-image-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cardiology-image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cardiology-content h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 25px;
+}
+
+.cardiology-content ul {
+  margin-left: 20px;
+  list-style-type: disc;
+  color: #444;
+  line-height: 1.6;
+}
+
+.cardiology-content p {
+  margin-top: 10px;
+  line-height: 1.6;
+  color: #555;
+}

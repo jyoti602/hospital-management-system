@@ -1,0 +1,55 @@
+
+.pulmonary-container {
+  padding: 20px;
+  background-color: #f4faff;
+  font-family: Arial, sans-serif;
+}
+
+.pulmonary-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pulmonary-header h1 {
+  color: #004d80;
+}
+
+.pulmonary-header p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pulmonary-image-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pulmonary-main-img {
+  max-width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pulmonary-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.pulmonary-content h2 {
+  color: #006699;
+  margin-top: 20px;
+}
+
+.pulmonary-content ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.pulmonary-content p {
+  color: #444;
+}

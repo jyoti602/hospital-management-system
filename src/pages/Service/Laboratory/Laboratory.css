@@ -1,0 +1,82 @@
+
+
+.lab-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f9f9f9, #e9f5ff);
+  color: #333;
+  padding: 20px;
+}
+
+.lab-header {
+  text-align: center;
+  padding: 30px 10px;
+  background-color: #005b96;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lab-section {
+  margin-top: 40px;
+  background: rgb(222, 193, 231);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.lab-section h2 {
+  color: #090c0e;
+  margin-bottom: 10px;
+}
+
+.lab-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lab-section li {
+  padding: 8px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.lab-card {
+  background: #73c4f0;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #00aaff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.lab-tips li {
+  background: #74bfe2;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-left: 4px solid #007acc;
+  border-radius: 4px;
+}
+
+.lab-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #666;
+}
+
+@media screen and (max-width: 600px) {
+  .lab-header h1 {
+    font-size: 24px;
+  }
+
+  .lab-section h2 {
+    font-size: 20px;
+  }
+}

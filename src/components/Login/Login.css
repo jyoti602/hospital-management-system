@@ -1,15 +1,8 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #e3f2fd;
-}
 
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(120deg, #6dd5ed, #2193b0);
 }
 
 .login-box {
@@ -21,10 +14,15 @@ body {
   max-width: 400px;
 }
 
-h2 {
-  text-align: center;
-  color: #2193b0;
-  margin-bottom: 25px;
+.login-top-section{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+      flex-direction: column;
+}
+.login-top-section p{
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .input-group {

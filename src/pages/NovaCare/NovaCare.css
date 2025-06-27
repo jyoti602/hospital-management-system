@@ -1,0 +1,106 @@
+.nova-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  padding: 1.5rem;
+  font-family: sans-serif;
+}
+
+.nova-header {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.nova-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nova-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #2563eb;
+}
+
+.nova-title {
+  font-size: 1.875rem;
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+.nova-subtitle {
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.nova-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .nova-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nova-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.nova-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.nova-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.nova-card-text {
+  color: #4b5563;
+}
+
+.nova-about {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.nova-about-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.nova-about-text {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.nova-image {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nova-footer {
+  text-align: center;
+  color: #9ca3af;
+  margin-top: 2rem;
+}

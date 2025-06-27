@@ -4,9 +4,9 @@ import './Home.css';
 import AppointmentForm from '../../components/AppointmentForm/AppointmentForm';
 import AboutUs from '../AboutUs/AboutUs';
 import Services from '../Service/Services';
-import Contact from '../Contact/Contact';
 import Feature from '../Feature/Feature';
 import Doctor from '../Doctor/Doctor';
+
 
 const Home = () => {
   return (
@@ -44,7 +44,7 @@ const Home = () => {
       <Services />
       <Doctor />
       <AppointmentForm />
-      <Contact />
+     
     </div>
   );
 };

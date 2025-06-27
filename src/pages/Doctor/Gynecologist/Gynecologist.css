@@ -1,0 +1,77 @@
+.gyne-wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+.gyne-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  background-color: #f3f4f6;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.gyne-header h1 {
+  font-size: 2.5rem;
+  color: #c026d3;
+}
+
+.gyne-header p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: #4b5563;
+}
+
+.gyne-section {
+  margin-bottom: 2rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-left: 6px solid #c026d3;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.gyne-section h2 {
+  color: #111827;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.gyne-section ul {
+  padding-left: 1.5rem;
+}
+
+.gyne-section li {
+  margin-bottom: 0.6rem;
+  color: #374151;
+}
+
+.gyne-footer {
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 3rem;
+}
+.back-btn {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #0369a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #0284c7;
+}

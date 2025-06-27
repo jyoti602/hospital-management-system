@@ -1,0 +1,50 @@
+.ortho-container {
+  padding: 20px;
+  background-color: #f7f8fc;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.ortho-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ortho-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.ortho-header p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ortho-section {
+  margin-top: 30px;
+}
+
+.ortho-section h2 {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.ortho-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.ortho-section ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.ortho-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #444;
+}

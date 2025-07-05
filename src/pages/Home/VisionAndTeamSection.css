@@ -1,0 +1,236 @@
+.visionteam-section {
+  width: 100%;
+  background: #fff;
+  padding: 3.5rem 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vision-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.vision-left {
+  flex: 1 1 350px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.vision-label {
+  color: #6c63ff;
+  background: #edeaff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  margin-bottom: 0.7rem;
+  display: inline-block;
+}
+.vision-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.vision-cta-btn {
+  background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.12);
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  width: fit-content;
+}
+.vision-cta-btn:hover {
+  background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
+  transform: translateY(-2px);
+}
+.arrow {
+  font-size: 1.2rem;
+  margin-left: 0.2rem;
+}
+.vision-right {
+  flex: 1 1 ;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.vision-feature-card {
+  background: #faf9fd;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.06);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.vision-check {
+  color: #6c63ff;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+.vision-feature-title {
+  font-weight: 700;
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+.vision-feature-desc {
+  color: #555;
+  font-size: 1rem;
+}
+
+.visionteam-stats-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 2.5rem 0 2.5rem 0;
+  flex-wrap: wrap;
+}
+.visionteam-stat {
+  text-align: center;
+}
+.visionteam-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6c63ff;
+  margin-bottom: 0.3rem;
+}
+.visionteam-stat-label {
+  color: #555;
+  font-size: 1rem;
+}
+
+.visionteam-team-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+.visionteam-team-label {
+  color: #6c63ff;
+  background: #edeaff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+  display: inline-block;
+}
+.visionteam-team-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.7rem;
+  line-height: 1.2;
+}
+.visionteam-team-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1100px;
+}
+.visionteam-doctor-card {
+  background: #faf9fd;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.06);
+  padding: 2.2rem 2rem 2rem 2rem;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.visionteam-doctor-card:hover {
+  box-shadow: 0 8px 32px rgba(108, 99, 255, 0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+.visionteam-doctor-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+  border: 3px solid #edeaff;
+  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.08);
+}
+.visionteam-doctor-name {
+  color: #222;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+.visionteam-doctor-specialty {
+  color: #6c63ff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1100px) {
+  .vision-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .vision-left, .vision-right {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .visionteam-stats-row {
+    gap: 1.5rem;
+  }
+  .visionteam-team-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .visionteam-doctor-card {
+    width: 100%;
+    max-width: 400px;
+    min-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  .visionteam-section {
+    padding: 2rem 0 1.5rem 0;
+  }
+  .vision-title, .visionteam-team-title {
+    font-size: 1.2rem;
+  }
+  .visionteam-doctor-card {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .visionteam-doctor-photo {
+    width: 48px;
+    height: 48px;
+  }
+} 

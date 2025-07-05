@@ -1,0 +1,126 @@
+.whychoose-section {
+  width: 100%;
+  background: #fff;
+  padding: 3.5rem 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whychoose-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.whychoose-label {
+  color: #6c63ff;
+  background: #edeaff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+  display: inline-block;
+}
+
+.whychoose-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.7rem;
+  line-height: 1.2;
+}
+
+.whychoose-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.whychoose-features-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.whychoose-card {
+  background: #faf9fd;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.06);
+  padding: 2.2rem 2rem 2rem 2rem;
+  min-width: 220px;
+  max-width: 300px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.whychoose-card:hover {
+  box-shadow: 0 8px 32px rgba(108, 99, 255, 0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.whychoose-icon {
+  font-size: 2.5rem;
+  color: #a084ee;
+  margin-bottom: 1.2rem;
+}
+
+.whychoose-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.7rem;
+}
+
+.whychoose-card p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .whychoose-features-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .whychoose-card {
+    width: 100%;
+    max-width: 400px;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .whychoose-section {
+    padding: 2rem 0 1.5rem 0;
+  }
+  .whychoose-title {
+    font-size: 1.2rem;
+  }
+  .whychoose-card {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .whychoose-icon {
+    font-size: 2rem;
+  }
+} 
+.whychoose-slider {
+  width: 100%;
+}
+.swiper-pagination-bullet {
+  background: #6c63ff;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}

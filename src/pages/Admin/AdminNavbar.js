@@ -7,7 +7,6 @@ const AdminNavbar = () => {
       <div className="admin-info">
         <span className="notification-icon">🔔</span>
         <span className="admin-name">Jyoti Bisht</span>
-        <img className="admin-avatar" src="https://via.placeholder.com/40" alt="Admin" />
       </div>
     </div>
   );

@@ -1,0 +1,128 @@
+.services-section-home {
+  width: 100%;
+  background: #deadeb;
+  padding: 3.5rem 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.services-label {
+  color: #6c63ff;
+  background: #edeaff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+  display: inline-block;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.services-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.services-cards-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.service-card-home {
+  background: #faf9fd;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.06);
+  padding: 2.2rem 2rem 2rem 2rem;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 1.5rem;
+}
+.service-card-home:hover {
+  box-shadow: 0 8px 32px rgba(108, 99, 255, 0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #a084ee;
+  margin-bottom: 1.2rem;
+}
+
+.service-card-home h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.7rem;
+}
+
+.service-card-home p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.service-learn-more {
+  color: #6c63ff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: color 0.2s;
+}
+.service-learn-more:hover {
+  color: #a084ee;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .services-cards-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .service-card-home {
+    width: 100%;
+    max-width: 400px;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-section-home {
+    padding: 2rem 0 1.5rem 0;
+  }
+  .services-title {
+    font-size: 1.2rem;
+  }
+  .service-card-home {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .service-icon {
+    font-size: 2rem;
+  }
+} 

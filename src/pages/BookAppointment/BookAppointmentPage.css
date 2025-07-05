@@ -1,0 +1,64 @@
+.book-appointment-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f8ff;
+}
+.book-appointment-hero {
+  width: 100%;
+  min-height: 320px;
+  background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 0 2.5rem 0;
+}
+.book-appointment-hero-content {
+  max-width: 600px;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto;
+}
+.book-appointment-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.1rem;
+  letter-spacing: 1px;
+}
+.book-appointment-hero-subtitle {
+  font-size: 1.18rem;
+  font-weight: 400;
+  margin-bottom: 2.2rem;
+  color: #edeaff;
+}
+.book-appointment-hero-btn {
+  background: #fff;
+  color: #6c63ff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  padding: 0.85rem 2.2rem;
+  box-shadow: 0 2px 12px 0 rgba(108, 99, 255, 0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.book-appointment-hero-btn:hover {
+  background: #a084ee;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.book-appointment-form-wrapper {
+  margin-top: -2.5rem;
+  padding-bottom: 2.5rem;
+}
+@media (max-width: 700px) {
+  .book-appointment-hero-title {
+    font-size: 1.6rem;
+  }
+  .book-appointment-hero-content {
+    padding: 0 0.5rem;
+  }
+  .book-appointment-form-wrapper {
+    margin-top: -1.2rem;
+  }
+} 

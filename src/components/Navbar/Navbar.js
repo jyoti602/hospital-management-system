@@ -1,53 +1,47 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ChevronUp, Menu,ArrowRight, X } from 'lucide-react';
+import { FaBars, FaTimes, FaArrowRight } from 'react-icons/fa';
+import { FaRegCalendarCheck } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const handleToggle = () => setMenuOpen((open) => !open);
+  const handleClose = () => setMenuOpen(false);
 
   return (
-    <nav className="nav-bar">
-      <div className="nav-left">
-        <img src="/images/company_logo.jpg" alt="Logo" className="logo" />
-      </div>
-
-      <div className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
-        <Link to="/home" onClick={toggleMobileMenu}>Home</Link>
-        <Link to="/about-us" onClick={toggleMobileMenu}>About</Link>
-        <Link to="/services" onClick={toggleMobileMenu}>Service</Link>
-
-        <div className="dropdown" onClick={toggleDropdown}>
-          <div className="dropbtn">
-            Pages {dropdownOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-          </div>
-          {dropdownOpen && (
-            <div className="dropdown-content">
-              <Link to="/feature" onClick={toggleMobileMenu}>Feature</Link>
-              <Link to="/appointment" onClick={toggleMobileMenu}>Appointment</Link>
-              <Link to="/doctor" onClick={toggleMobileMenu}>Doctor</Link>
-            </div>
-          )}
+    <header className="hero-navbar">
+      <div className="navbar-top">
+        <div className="hero-logo-row">
+          <img src="../../images/company_logo.jpg" height={60}></img>
         </div>
-
-        <Link to="/contact" onClick={toggleMobileMenu}>Contact</Link>
-        <Link to="/login" onClick={toggleMobileMenu}>Login</Link>
-
-        <div className="appointment-button">
-          <Link to="/appointment" onClick={toggleMobileMenu}>
-            <button>  Appointment <ArrowRight size={16} /></button>
+        <button className="mobile-toggle" onClick={handleToggle} aria-label="Toggle navigation">
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+      <div className={`navbar-menu${menuOpen ? ' active' : ''}`}>
+        <nav className="hero-nav-links">
+          <Link to="/" className="active" onClick={handleClose}>Home</Link>
+          <a href="/#services" onClick={handleClose}>Services</a>
+          <a href="/#about-us" onClick={handleClose}>About Us</a>
+          <Link to="/book-appointment" className="appointment-nav-btn" onClick={handleClose}>
+            <FaRegCalendarCheck style={{ marginRight: '8px' }} />
+            Appointment
+          </Link>
+        </nav>
+        <div className="hero-nav-actions">
+          <Link to="/signup">
+            <button className="hero-signup-btn" onClick={handleClose}>Sign Up</button>
+          </Link>
+          <Link to="/contact">
+            <button className="hero-contact-btn" onClick={handleClose}>
+              <span>Contact Us</span> <FaArrowRight style={{ marginLeft: '8px' }} />
+            </button>
           </Link>
         </div>
       </div>
-
-      <div className="mobile-toggle" onClick={toggleMobileMenu}>
-        {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-      </div>
-    </nav>
+    </header>
   );
 };
 

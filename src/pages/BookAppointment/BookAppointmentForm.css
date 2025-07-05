@@ -1,0 +1,101 @@
+.appointment-form-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(108, 99, 255, 0.08);
+  max-width: 480px;
+  margin: 2.5rem auto;
+  padding: 2.2rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.appointment-form-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #6c63ff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.appointment-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.appointment-form-group label {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.1rem;
+}
+.appointment-form-group label span {
+  color: #a084ee;
+  margin-left: 2px;
+}
+.appointment-form-group input,
+.appointment-form-group select,
+.appointment-form-group textarea {
+  border: 1.5px solid #edeaff;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  background: #f8f8ff;
+  color: #222;
+  outline: none;
+  transition: border 0.2s;
+}
+.appointment-form-group input:focus,
+.appointment-form-group select:focus,
+.appointment-form-group textarea:focus {
+  border-color: #6c63ff;
+}
+.appointment-form-group .error {
+  border-color: #ff6b6b;
+}
+.form-error {
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+.form-success {
+  color: #22bb77;
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.appointment-form-row {
+  display: flex;
+  gap: 1rem;
+}
+.appointment-form-row .appointment-form-group {
+  flex: 1 1 0;
+}
+.appointment-form-btn {
+  background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.appointment-form-btn:hover {
+  background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .appointment-form-card {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .appointment-form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+} 

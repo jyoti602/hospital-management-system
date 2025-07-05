@@ -70,7 +70,7 @@
 /* Main Panel */
 .main-panel {
   flex: 1;
-  margin-left: 220px;
+  margin-left: 250px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -79,15 +79,14 @@
 
 /* Admin Navbar */
 .admin-navbar {
-  background-color: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .admin-info {
@@ -102,12 +101,6 @@
   border-radius: 50%;
 }
 
-/* Appointment Section */
-.appointment-section {
-  padding: 30px 40px;
-  background-color: #f9f9fb;
-  min-height: 100vh;
-}
 
 .appointment-header {
   display: flex;
@@ -153,24 +146,7 @@
   margin: 20px 0;
 }
 
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex: 1;
-  min-width: 200px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fff;
-}
 
-.search-box input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-}
 
 .filter-date-btn {
   padding: 10px 16px;

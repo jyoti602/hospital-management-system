@@ -1,12 +1,8 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
-const ProtectedRoute = ({ children }) => {
-  const isAdmin = localStorage.getItem('isAdmin') === 'true';
-  if (!isAdmin) {
-    return <Navigate to="/login" replace />;
-  }
-  return children;
+const ProtectedRoute = ({ isAllowed, redirectTo = '/login' }) => {
+  return isAllowed ? <Outlet /> : <Navigate to={redirectTo} />;
 };
 
-export default ProtectedRoute; 
+export default ProtectedRoute;

@@ -1,71 +1,48 @@
-import React from "react";
-import {
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaTwitter,
-  FaFacebookF,
-  FaYoutube,
-  FaLinkedinIn,
-} from "react-icons/fa";
-import "./Footer.css";
+import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        {/* Address Section */}
-        <div className="footer-box">
-          <h3>Address</h3>
-          <p>
-            <FaMapMarkerAlt className="footer-icon" /> 123 Street, New York, USA
-          </p>
-          <p>
-            <FaPhoneAlt className="footer-icon" /> +012 345 67890
-          </p>
-          <p>
-            <FaEnvelope className="footer-icon" /> info@example.com
-          </p>
-          <div className="footer-icons">
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaYoutube /></a>
-            <a href="#"><FaLinkedinIn /></a>
+    <footer className="footer-section">
+      <div className="footer-grid">
+        {/* Logo and Newsletter */}
+        <div className="footer-brand-col">
+          <div className="footer-logo-row">
+            <span className="footer-logo-icon">🟣</span>
+            <span className="footer-logo-text">NovaCare</span>
           </div>
+          <p className="footer-desc">
+            Lorem ipsum dolor sit amet consectetur. Dictum eget sit scelerisque lorem pulvinar. Sapien
+          </p>
+          <div className="footer-newsletter-label">Subscribe Newsletter</div>
+          <form className="footer-newsletter-form">
+            <input type="email" placeholder="Email Address" className="footer-newsletter-input" />
+            <button type="submit" className="footer-newsletter-btn">→</button>
+          </form>
         </div>
-
-        {/* Services Section */}
-        <div className="footer-box">
-          <h3>Services</h3>
-          <ul>
-            <li>› Cardiology</li>
-            <li>› Pulmonary</li>
-            <li>› Neurology</li>
-            <li>› Orthopedics</li>
-            <li>› Laboratory</li>
-          </ul>
-        </div>
-
         {/* Quick Links */}
-        <div className="footer-box">
-          <h3>Quick Links</h3>
-          <ul>
-            <li>› About Us</li>
-            <li>› Contact Us</li>
-            <li className="active">› Our Services</li>
-            <li>› Terms & Conditions</li>
-            <li>› Support</li>
-          </ul>
+        <div className="footer-links-col">
+          <div className="footer-links-title">Quick Links</div>
+          <a href="home">Home</a>
+          <a href="about-Us">About-Us</a>
+          <a href="services">Services</a>
+          <a href="articles">Articles</a>
         </div>
-
-        {/* Newsletter */}
-        <div className="footer-box">
-          <h3>Newsletter</h3>
-          <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-          <div className="newsletter">
-            <input type="email" placeholder="Your email" />
-            <button>SignUp</button>
-          </div>
+        {/* Utility Pages */}
+        <div className="footer-links-col">
+          <div className="footer-links-title">Utility Pages</div>
+          <a href="contact">Contact Us</a>
+          <a href="#">Privacy & policy</a>
+          <a href="#">Terms & conditions</a>
+          <a href="#">404 not found</a>
+        </div>
+        {/* Follow Us */}
+        <div className="footer-links-col">
+          <div className="footer-links-title">Follow Us</div>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter / X</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Facebook</a>
         </div>
       </div>
     </footer>

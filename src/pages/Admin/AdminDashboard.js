@@ -1,12 +1,9 @@
-// AdminDashboardPage.jsx
-import React from "react";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import AdminNavbar from "./AdminNavbar";
-import AppointmentForm from "../../components/AppointmentForm/AppointmentForm";
+import { useNavigate } from "react-router-dom";
 import "./AdminPanel.css"
-import TableComponent from "../../components/TableComponent/TableComponent";
+import TableComponent from "../../components/Table/TableComponent";
 
 const AdminDashboardPage = () => {
+    const navigate = useNavigate();
   const appointments = [
     { time: "9:30 AM", date: "05/12/2022", name: "Elizabeth Polson", initials: "EP", age: 32, doctor: "Dr. John" },
     { time: "9:30 AM", date: "05/12/2022", name: "John David", initials: "JD", age: 28, doctor: "Dr. Joel" },
@@ -25,25 +22,18 @@ const AdminDashboardPage = () => {
   ];
 
   return (
-    <div className="admin-container">
-      <Sidebar />
-      <div className="main-panel">
-        <AdminNavbar />
-        <div className="appointment-section">
+        <div className="admin-appointment-section">
           <div className="appointment-header">
             <div className="tabs">
               <button className="tab active">NEW APPOINTMENTS</button>
               <button className="tab">COMPLETED APPOINTMENTS</button>
             </div>
-            <button className="new-appointment-btn">+ New Appointment</button>
+            <button className="new-appointment-btn" onClick={() => navigate("/appointment")}>+ New Appointment</button>
           </div>
-
           <div className="filters">
             <div className="search-box">
-              <span className="icon">🔍</span>
               <input type="text" placeholder="Search" />
             </div>
-            <button className="filter-date-btn">📅 Filter by Date</button>
           </div>
 
             <TableComponent
@@ -52,8 +42,6 @@ const AdminDashboardPage = () => {
             rowsPerPage={4}
             />
         </div>
-      </div>
-    </div>
   );
 };
 

@@ -1,0 +1,189 @@
+.nova-container {
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    padding: 1.5rem;
+    font-family: sans-serif;
+    background-image: linear-gradient(to bottom, #f3f4f6, #e5e7eb); /* Subtle gradient background */
+}
+
+.nova-header {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.nova-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nova-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #2563eb; /* Primary blue for icons */
+    opacity: 0.8;
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.nova-icon:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.nova-title {
+    font-size: 1.875rem;
+    color: #1e3a8a; /* Darker blue for titles */
+    font-weight: bold;
+}
+
+.nova-subtitle {
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+.nova-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .nova-features {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .nova-features {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    }
+}
+
+.nova-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover effects */
+}
+
+.nova-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+.nova-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex; /* For inline icon-text alignment */
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+}
+
+.nova-card-text {
+    color: #4b5563;
+}
+
+.nova-card-text a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nova-card-text a:hover {
+    text-decoration: underline;
+}
+
+.nova-about {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .nova-about {
+        grid-template-columns: 1fr 1.2fr; /* Two columns on medium screens */
+    }
+}
+
+.nova-about-text-container {
+    order: 2; /* Text after image on mobile */
+}
+
+@media (min-width: 768px) {
+    .nova-about-text-container {
+        order: 1; /* Text before image on desktop */
+    }
+}
+
+.nova-about-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.nova-about-text {
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.nova-about-image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); /* Responsive grid for images */
+    gap: 0.75rem;
+}
+
+.nova-about-image-gallery img {
+    width: 100%;
+    height: 8rem;
+    object-fit: cover; /* Images cover the area, cropping if needed */
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease-in-out; /* Hover effect for images */
+}
+
+.nova-about-image-gallery img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.nova-cta {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    margin: 3rem 0;
+}
+
+.nova-cta-title {
+    font-size: 1.75rem;
+    color: #2563eb;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.nova-cta-button {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.nova-cta-button:hover {
+    background-color: #1e3a8a;
+}

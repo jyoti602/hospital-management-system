@@ -11,7 +11,10 @@
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
-
+a{
+  text-decoration: none;  
+}
+ 
 .logo {
   height: 50px;
   width: 100px;
@@ -38,7 +41,6 @@
 /* Dropdown styles */
 .dropdown {
   position: relative;
-  cursor: pointer;
 }
 
 .dropbtn {
@@ -51,7 +53,7 @@
 
 .dropdown-content {
   position: absolute;
-  top: 130%;
+  top: 20px;
   left: 0;
   background-color: #ffffff;
   border-radius: 8px;
@@ -75,9 +77,11 @@
   text-decoration: none;
   transition: background 0.3s;
 }
+
 .nav-left{
-      padding-left: 25px;
+  padding-left: 25px;
 }
+
 .dropdown-content a:hover {
   background-color: #f3f4f6;
 }
@@ -178,5 +182,332 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Navbar desktop styles */
+.hero-navbar {
+  display: flex;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  box-shadow: none;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.navbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 1.2rem 3vw 1.2rem 3vw; */
+  background: transparent;
+}
+
+.hero-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 2rem;
+  font-weight: 700;
+  
+}
+.hero-logo-row img{
+  height: 60pxF;
+}
+.hero-logo-icon {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #a084ee 0%, #6c63ff 100%);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  box-shadow: 0 2px 8px rgba(160,132,238,0.08);
+}
+.hero-logo-text {
+  color: #6c63ff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  gap: 10px;
+}
+
+.hero-nav-links {
+  display: flex;
+  gap: 2.5rem;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+}
+.hero-nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.13rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s, color 0.2s;
+}
+.hero-nav-links a.active,
+.hero-nav-links a:hover {
+  color: #6c63ff;
+  border-bottom: 2px solid #6c63ff;
+}
+
+.hero-nav-actions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.hero-signup-btn {
+  background: none;
+  border: 1.5px solid #a084ee;
+  color: #6c63ff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+}
+.hero-signup-btn:hover {
+  background: #f3f0ff;
+  border-color: #6c63ff;
+  color: #6c63ff;
+}
+.hero-contact-btn {
+  background: none;
+  border: 1.5px solid #a084ee;
+  color: #222;
+  padding: 0.5rem 1.7rem 0.5rem 1.3rem;
+  border-radius: 25px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  outline: none;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.hero-contact-btn:hover {
+  background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
+  color: #fff;
+  border-color: #6c63ff;
+}
+.hero-contact-btn svg {
+  font-size: 1.2em;
+  margin-left: 0.5em;
+  transition: color 0.2s;
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+/* Responsive styles remain below for mobile/tablet */
+
+/* Appointment button (desktop & mobile) */
+.appointment-btn {
+  background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.7rem 0.5rem 1.3rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  outline: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(160,132,238,0.08);
+}
+.appointment-btn:hover {
+  background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(108,99,255,0.13);
+}
+.appointment-btn svg {
+  font-size: 1.2em;
+  margin-left: 0.5em;
+}
+
+/* Mobile styles */
+@media (max-width: 900px) {
+  .hero-navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+  .navbar-top {
+    padding: 1rem 1.2rem 1rem 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .mobile-toggle {
+    display: block;
+    font-size: 2rem;
+    color: #6c63ff;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 0.2em 0.7em;
+    cursor: pointer;
+    z-index: 2100;
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+  }
+  .navbar-menu {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #fef8f7;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    gap: 0;
+    display: none;
+    z-index: 2000;
+    animation: slideDown 0.3s ease-in-out;
+    box-shadow: 0 8px 32px rgba(108,99,255,0.13);
+    transition: all 0.3s;
+  }
+  .navbar-menu.active {
+    display: flex;
+  }
+  .hero-nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    gap: 1.1rem;
+    margin-bottom: 2rem;
+    background: none;
+  }
+  .hero-nav-links a {
+    width: 90vw;
+    text-align: center;
+    font-size: 1.15rem;
+    color: #222 !important;
+    padding: 1.1rem 0;
+    background: #fff;
+    border-radius: 2rem;
+    font-weight: 600;
+    margin: 0.2rem 0;
+    border: none;
+    box-shadow: 0 2px 8px rgba(160,132,238,0.04);
+    transition: background 0.2s, color 0.2s;
+    display: block;
+  }
+  .hero-nav-links a.active,
+  .hero-nav-links a:hover {
+    color: #6c63ff;
+    background: #f3f0ff;
+  }
+  .appointment-nav-btn {
+    width: 90vw;
+    justify-content: center;
+    font-size: 1.15rem;
+    padding: 1.1rem 0;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
+    color: #fff !important;
+    font-weight: 700;
+    margin: 0.2rem 0 0.2rem 0;
+    border: none;
+    box-shadow: 0 2px 8px rgba(160,132,238,0.08);
+    transition: background 0.2s, color 0.2s;
+  }
+  .appointment-nav-btn svg {
+    font-size: 1.2em;
+    margin-right: 0.6em;
+  }
+  .appointment-nav-btn:hover {
+    background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
+    color: #fff;
+  }
+  .hero-nav-actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    gap: 10px;
+  }
+  .hero-signup-btn, .hero-contact-btn {
+    width: 90vw;
+    margin: 0.2rem 0;
+    font-size: 1.15rem;
+    padding: 1.1rem 0;
+    justify-content: center;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.appointment-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.13rem;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.55rem 2.1rem 0.55rem 1.3rem;
+  margin-left: 1.5rem;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  position: relative;
+  top: 0;
+}
+.appointment-nav-btn svg {
+  font-size: 1.2em;
+  margin-right: 0.6em;
+}
+.appointment-nav-btn:hover {
+  background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .appointment-nav-btn {
+    width: 90vw;
+    margin: 0.2rem 0 0.2rem 0;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 0.8rem 0;
+    border-radius: 2rem;
+    display: flex;
   }
 }

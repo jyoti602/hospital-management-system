@@ -1,18 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import AppRouter from './services/AppRouter';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './parts/Footer/Footer';
 
-
-function App() {
+function AppWrapper() {
   return (
     <BrowserRouter>
-      <Navbar /> 
-      <AppRouter />
-      <Footer/>
+      <App />
     </BrowserRouter>
   );
 }
 
-export default App;
+function App() {
+  const location = useLocation();
+
+  // Check if the path starts with "/admin"
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
+  return (
+    <>
+      {!isAdminRoute && <Navbar />}
+      <AppRouter />
+      {!isAdminRoute && <Footer />}
+    </>
+  );
+}
+
+export default AppWrapper;

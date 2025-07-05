@@ -1,0 +1,202 @@
+.contactus-section {
+  width: 100%;
+  background: #faf8ff;
+  padding: 3.5rem 0 2.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+.contactus-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 3.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+.contactus-info-col {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.contactus-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #6c63ff;
+  margin-bottom: 1.2rem;
+}
+.contactus-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.contactus-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-size: 1.13rem;
+  color: #444;
+}
+.contactus-info-icon {
+  font-size: 1.5rem;
+  color: #a084ee;
+}
+.contactus-form-col {
+  flex: 1.4;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.contactus-form-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(108, 99, 255, 0.08);
+  width: 100%;
+  max-width: 509px;
+  padding: 2.2rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.contactus-form-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #6c63ff;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.contactus-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.contactus-form-row {
+  display: flex;
+  gap: 1rem;
+}
+.contactus-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1 1 0;
+}
+.contactus-form-group label {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.1rem;
+}
+.contactus-form-group label span {
+  color: #a084ee;
+  margin-left: 2px;
+}
+.contactus-form-group input,
+.contactus-form-group textarea {
+  border: 1.5px solid #edeaff;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  background: #f8f8ff;
+  color: #222;
+  outline: none;
+  transition: border 0.2s;
+}
+.contactus-form-group input:focus,
+.contactus-form-group textarea:focus {
+  border-color: #6c63ff;
+}
+.contactus-form-group .error {
+  border-color: #ff6b6b;
+}
+.form-error {
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+.form-success {
+  color: #22bb77;
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.contactus-form-btn {
+  background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.contactus-form-btn:hover {
+  background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
+  transform: translateY(-2px);
+}
+@media (max-width: 900px) {
+  .contactus-container {
+    flex-direction: column;
+    gap: 2.2rem;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+  .contactus-info-col, .contactus-form-col {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactus-form-card {
+    max-width: 98vw;
+  }
+}
+@media (max-width: 700px) {
+  .contactus-section {
+    padding: 2rem 0 1.2rem 0;
+  }
+  .contactus-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 0.2rem;
+  }
+  .contactus-info-col, .contactus-form-col {
+    align-items: center;
+    padding: 0;
+    width: 100%;
+  }
+  .contactus-title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .contactus-info-list {
+    align-items: center;
+    width: 100%;
+  }
+  .contactus-info-item {
+    font-size: 1rem;
+    gap: 0.7rem;
+    justify-content: center;
+  }
+  .contactus-form-card {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .contactus-form-title {
+    font-size: 1.1rem;
+  }
+  .contactus-form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .contactus-form-card {
+    padding: 0.7rem 0.1rem 0.7rem 0.1rem;
+  }
+  .contactus-title {
+    font-size: 1.05rem;
+  }
+} 

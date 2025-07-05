@@ -1,85 +1,171 @@
-.footer {
-  background-color: #182952;
-  color: white;
-  padding: 50px 20px;
-  font-family: sans-serif;
+.footer-section {
+  width: 100%;
+  background: #fff;
+  padding: 3.5rem 0 2.5rem 0;
+  border-top: 1.5px solid #edeaff;
 }
 
-.footer-container {
+.footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
+  grid-template-columns: 2.2fr 1.2fr 1.2fr 1.2fr;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
 }
 
-.footer-box h3 {
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.footer-box p,
-.footer-box li {
-  margin: 8px 0;
-  font-size: 14px;
-}
-
-.footer-box ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-box li {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.footer-box li:hover,
-.footer-box li.active {
-  color: #1e90ff;
-}
-
-.footer-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  color: white;
-  font-size: 16px;
-  background: transparent;
-  border: 1px solid white;
-  padding: 8px;
-  border-radius: 50%;
-  transition: all 0.3s;
-}
-
-.footer-icons a:hover {
-  background-color: #1e90ff;
-  border-color: #1e90ff;
-}
-
-.newsletter {
+.footer-brand-col {
   display: flex;
-  margin-top: 10px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 1.2rem;
 }
-
-.newsletter input {
-  flex: 1;
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6c63ff;
+}
+.footer-logo-icon {
+  font-size: 2.2rem;
+}
+.footer-logo-text {
+  color: #6c63ff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.footer-desc {
+  color: #555;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+.footer-newsletter-label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #222;
+}
+.footer-newsletter-form {
+  display: flex;
+  align-items: center;
+  background: #f6f5fd;
+  border-radius: 30px;
+  padding: 0.2rem 0.2rem 0.2rem 1.2rem;
+  max-width: 320px;
+  margin-top: 0.2rem;
+}
+.footer-newsletter-input {
   border: none;
-  padding: 10px;
+  background: transparent;
+  font-size: 1rem;
+  color: #222;
   outline: none;
-  font-size: 14px;
+  flex: 1 1 0;
+  padding: 0.7rem 0;
 }
-
-.newsletter button {
-  background-color: #1e90ff;
-  color: white;
+.footer-newsletter-btn {
+  background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-weight: bold;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.footer-newsletter-btn:hover {
+  background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
+  transform: translateY(-2px);
 }
 
-.newsletter button:hover {
-  background-color: #0066cc;
+.footer-links-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-links-title {
+  font-weight: 700;
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+.footer-links-col a {
+  color: #444;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+  margin-bottom: 0.2rem;
+}
+.footer-links-col a:hover {
+  color: #6c63ff;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .footer-section {
+    padding: 2rem 0 1.2rem 0;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1.2rem;
+  }
+  .footer-brand-col {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  .footer-logo-row {
+    justify-content: center;
+    width: 100%;
+  }
+  .footer-newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+    max-width: 100%;
+    margin: 0.5rem auto 0 auto;
+  }
+  .footer-newsletter-input {
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+    margin-bottom: 0.7rem;
+    font-size: 1.05rem;
+  }
+  .footer-newsletter-btn {
+    width: 100%;
+    border-radius: 25px;
+    margin-left: 0;
+    font-size: 1.1rem;
+    height: 40px;
+    justify-content: center;
+  }
+  .footer-links-col {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Add bottom margin to each column for spacing on mobile/tablet */
+@media (max-width: 900px) {
+  .footer-brand-col,
+  .footer-links-col {
+    margin-bottom: 1.2rem;
+  }
 }

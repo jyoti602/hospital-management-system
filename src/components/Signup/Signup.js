@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom'; // ✅ Corrected import
-import './SignupPage.css';
+import './Signup.css';
 import { signupUser } from '../../api/authService';
 
 // ✅ Validation schema
@@ -20,7 +20,7 @@ const schema = Yup.object().shape({
     .oneOf([Yup.ref('password')], 'Passwords do not match'),
 });
 
-const SignupPage = () => {
+const Signup = () => {
   const [submitError, setSubmitError] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate(); // ✅ Initialize navigate
@@ -160,4 +160,4 @@ const SignupPage = () => {
   );
 };
 
-export default SignupPage;
+export default Signup;

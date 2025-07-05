@@ -12,7 +12,7 @@ const schema = Yup.object().shape({
   password: Yup.string().required('Password is required'),
 });
 
-const LoginPage = () => {
+const Login = () => {
   const {
     handleSubmit,
     control,
@@ -92,4 +92,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

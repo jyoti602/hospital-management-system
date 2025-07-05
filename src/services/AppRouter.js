@@ -4,7 +4,7 @@ import ContactUsPage from '../pages/Contact/ContactUsPage';
 import NovaCare from '../pages/Home/NovaCare';
 import AdminDashboard from '../pages/Admin/AdminDashboard';
 import LoginPage from '../components/Login/Login';
-import SignupPage from '../components/Signup/SignupPage';
+import SignupPage from '../components/Signup/Signup';
 import BookAppointmentPage from '../pages/BookAppointment/BookAppointmentPage';
 import AdminLayout from '../pages/Admin/AdminLayout';
 import ProtectedRoute from './ProtectedRoute';

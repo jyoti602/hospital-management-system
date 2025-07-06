@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FaTachometerAlt,
   FaUserInjured,
@@ -25,7 +25,16 @@ const sidebarItems = [
 
 const Sidebar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const isActive = (path) => location.pathname === path;
+
+  const handleLogout = () => {
+    // Remove login info from localStorage
+    localStorage.removeItem('login'); // or localStorage.clear() if needed
+    // Redirect to login page
+    navigate('/login');
+  };
 
   return (
     <aside className="sidebar">
@@ -36,7 +45,7 @@ const Sidebar = () => {
           </Link>
         ))}
       </nav>
-      <button className="logout-btn">
+      <button className="logout-btn" onClick={handleLogout}>
         <FaSignOutAlt className="sidebar-icon" /> Logout
       </button>
     </aside>

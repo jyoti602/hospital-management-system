@@ -34,33 +34,35 @@ const Signup = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
-    try {
-      const payload = {
-        name: data.name,
-        email: data.email,
-        password: data.password,
-      };
+const onSubmit = async (data) => {
+  try {
+    const payload = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    };
 
-      const response = await signupUser(payload);
+    const response = await signupUser(payload);
 
-      if (response.status === 200 || response.status === 201) {
-        setSubmitted(true);
-        setSubmitError('');
-        reset();
-
-        // ✅ Redirect to login page
-        navigate('/login');
-      }
-    } catch (error) {
-      if (error.response?.status === 401) {
-        setSubmitError('Unauthorized. Please check your input.');
-      } else {
-        setSubmitError('An error occurred. Please try again later.');
-      }
-      setSubmitted(false);
+    if (response.status === 200 || response.status === 201) {
+      setSubmitted(true);
+      setSubmitError('');
+      reset();
+      navigate('/login'); // ✅ redirect to login after success
+    } 
+  } catch (error) {
+    if (error.response?.status === 409) {
+      // 👇 Extract the message sent from backend
+      setSubmitError(error.response.data.message || 'Email already registered');
+    } else if (error.response?.status === 401) {
+      setSubmitError('Unauthorized. Please check your input.');
+    } else {
+      setSubmitError('An error occurred. Please try again later.');
     }
-  };
+    setSubmitted(false);
+  }
+};
+
 
   return (
     <section className="signup-section">

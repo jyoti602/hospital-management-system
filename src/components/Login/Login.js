@@ -2,8 +2,8 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
 import './Login.css';
+import { Link, useNavigate } from 'react-router-dom'; // ✅ Corrected import
 import { loginUser } from '../../api/authService';
 
 // ✅ Validation Schema
@@ -20,13 +20,19 @@ const Login = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  const navigate = useNavigate(); // ✅ Initialize navigate
+
 
   const onSubmit = async (data) => {
     console.log('Login Data:', data);
 
     try {
       const response = await loginUser(data);
+      console.log(response)
       if (response.status === 200 || response.status === 201) {
+        console.log(response.data)
+      localStorage.setItem('login', JSON.stringify(response.data));
+      navigate('/admin');
       }
     } catch (error) {
     }

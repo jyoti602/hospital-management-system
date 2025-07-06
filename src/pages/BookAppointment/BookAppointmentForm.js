@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import './BookAppointmentForm.css';
+import { bookAppointments } from '../../api/authService';
 
 const departments = [
   'Cardiology', 'Neurology', 'Orthopedics', 'Pulmonary',
@@ -14,7 +15,6 @@ const doctors = [
   'Dr. Sarah Johnson', 'Dr. David Kim',
 ];
 
-// ✅ Validation Schema
 const schema = Yup.object().shape({
   patient: Yup.string().required('Patient name is required'),
   contact: Yup.string().required('Contact info is required'),
@@ -22,10 +22,13 @@ const schema = Yup.object().shape({
   doctor: Yup.string().required('Doctor is required'),
   date: Yup.string().required('Date is required'),
   time: Yup.string().required('Time is required'),
-  reason: Yup.string(), // optional
+  reason: Yup.string(),
 });
 
 const BookAppointmentForm = () => {
+  const [appointments, setAppointments] = useState([]);
+  const [successMsg, setSuccessMsg] = useState(false);
+
   const {
     control,
     handleSubmit,
@@ -43,15 +46,23 @@ const BookAppointmentForm = () => {
       reason: '',
     },
   });
+  const onSubmit = async (data) => {
+  
+  try {
+    const response = await bookAppointments(data);
 
-  const onSubmit = (data) => {
-    console.log('Form Data:', data);
-    reset(); // reset form
+    if (response.status === 200 || response.status === 201) {
+      reset();
+    } 
+  } catch (error) {
+  }
   };
+  
 
   return (
     <div className="appointment-form-card">
       <h2 className="appointment-form-title">Book Appointment</h2>
+
       <form className="appointment-form" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         {/* Patient Name */}
         <div className="appointment-form-group">
@@ -60,12 +71,7 @@ const BookAppointmentForm = () => {
             name="patient"
             control={control}
             render={({ field }) => (
-              <input
-                {...field}
-                type="text"
-                placeholder="Enter patient name"
-                className={errors.patient ? 'error' : ''}
-              />
+              <input {...field} type="text" placeholder="Enter patient name" className={errors.patient ? 'error' : ''} />
             )}
           />
           {errors.patient && <div className="form-error">{errors.patient.message}</div>}
@@ -78,12 +84,7 @@ const BookAppointmentForm = () => {
             name="contact"
             control={control}
             render={({ field }) => (
-              <input
-                {...field}
-                type="text"
-                placeholder="Email or phone number"
-                className={errors.contact ? 'error' : ''}
-              />
+              <input {...field} type="text" placeholder="Email or phone number" className={errors.contact ? 'error' : ''} />
             )}
           />
           {errors.contact && <div className="form-error">{errors.contact.message}</div>}
@@ -125,7 +126,7 @@ const BookAppointmentForm = () => {
           {errors.doctor && <div className="form-error">{errors.doctor.message}</div>}
         </div>
 
-        {/* Date & Time */}
+        {/* Date and Time */}
         <div className="appointment-form-row">
           <div className="appointment-form-group">
             <label>Date<span>*</span></label>
@@ -133,11 +134,7 @@ const BookAppointmentForm = () => {
               name="date"
               control={control}
               render={({ field }) => (
-                <input
-                  {...field}
-                  type="date"
-                  className={errors.date ? 'error' : ''}
-                />
+                <input {...field} type="date" className={errors.date ? 'error' : ''} />
               )}
             />
             {errors.date && <div className="form-error">{errors.date.message}</div>}
@@ -148,11 +145,7 @@ const BookAppointmentForm = () => {
               name="time"
               control={control}
               render={({ field }) => (
-                <input
-                  {...field}
-                  type="time"
-                  className={errors.time ? 'error' : ''}
-                />
+                <input {...field} type="time" className={errors.time ? 'error' : ''} />
               )}
             />
             {errors.time && <div className="form-error">{errors.time.message}</div>}
@@ -166,11 +159,7 @@ const BookAppointmentForm = () => {
             name="reason"
             control={control}
             render={({ field }) => (
-              <textarea
-                {...field}
-                placeholder="Reason for appointment (optional)"
-                rows={3}
-              />
+              <textarea {...field} placeholder="Reason for appointment (optional)" rows={3} />
             )}
           />
         </div>
@@ -178,10 +167,8 @@ const BookAppointmentForm = () => {
         {/* Submit */}
         <button className="appointment-form-btn" type="submit">Book Appointment</button>
 
-        {/* Success message */}
-        {isSubmitSuccessful && (
-          <div className="form-success">Appointment booked successfully!</div>
-        )}
+        {/* Success Message */}
+        {successMsg && <div className="form-success">{successMsg}</div>}
       </form>
     </div>
   );

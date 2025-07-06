@@ -10,7 +10,8 @@ import AdminLayout from '../pages/Admin/AdminLayout';
 import ProtectedRoute from './ProtectedRoute';
 
 const AppRouter = () => {
-  const isAdmin = localStorage.getItem('isAdmin') === 'true'; // Or get from auth context
+const loginData = JSON.parse(localStorage.getItem('login') || '{}');
+const isAdmin = loginData.success === true ;
   return (
     <Routes>
       <Route path="/" element={<Home />} />

@@ -85,16 +85,21 @@ const BookAppointmentForm = () => {
 
         {/* Department */}
         <div className="appointment-form-group">
-          <label>Department <span>*</span></label>
+          <label>Specialization <span>*</span></label>
           <Controller
             name="department"
             control={control}
             render={({ field }) => (
               <select {...field} className={errors.department ? 'error' : ''}>
-                <option value="">Select department</option>
-                {departments.map((dept) => (
-                  <option key={dept} value={dept}>{dept}</option>
-                ))}
+                 <option value="">Select Specialization</option>
+                      <option>Cardiologist</option>
+                      <option>Dermatologist</option>
+                      <option>Neurologist</option>
+                      <option>Orthopedic</option>
+                      <option>Pediatrician</option>
+                      <option>Psychiatrist</option>
+                      <option>Radiologist</option>
+                      <option>ENT Specialist</option>
               </select>
             )}
           />

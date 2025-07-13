@@ -78,3 +78,92 @@
     padding: 1.2rem 1rem;
   }
 } 
+
+
+
+
+.dashboard-container {
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fb;
+   min-height: 550px;
+}
+
+.dashboard-title {
+  font-size: 26px;
+  margin-bottom: 42px;
+  color: rgb(54, 102, 225);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+  height: 129px;
+  width: 317px;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-icon {
+  font-size: 60px;
+  margin-right: 20px;
+}
+
+
+.dashboard-content h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.dashboard-content p {
+  margin: 0;
+  font-size: 31px;
+  opacity: 0.9;
+}
+
+/* Color themes */
+.blue {
+  background: linear-gradient(135deg, #6aade4, #21cbf3);
+}
+
+.green {
+  background: linear-gradient(135deg, #89dc8b, #8bc34a);
+}
+
+.yellow {
+  background: linear-gradient(135deg, #d39d46, #ffc107);
+}
+
+.pink {
+  background: linear-gradient(135deg, #f5598d, #f06292);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Exactly 2 cards per row */
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Stack one card per row on small screens */
+  }
+}
+
+.dashboard-content h3,p {
+  font-size: 50px; /* bigger and bolder */
+  font-weight: 700;
+}

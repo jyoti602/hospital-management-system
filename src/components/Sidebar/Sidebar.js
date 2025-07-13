@@ -40,9 +40,12 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       <nav>
-         <div className="hero-logo-row">
-          <img src="../../images/company_logo.jpg" height={60} width={200} ></img>
-        </div>
+      <div className="hero-logo-row">
+  <a href="/">
+    <img src="/images/company_logo.jpg" alt="Company Logo" height={60} width={200} />
+  </a>
+</div>
+
         {sidebarItems.map(({ path, label, icon: Icon }) => (
           <Link key={path} to={path} className={isActive(path) ? "active" : ""}>
             <Icon className="sidebar-icon" /> {label}

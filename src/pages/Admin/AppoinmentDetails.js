@@ -126,12 +126,15 @@ const AppointmentDetails = () => {
         <div className="filter-box">
           <FaFilter className="icon" />
           <select value={selectedDepartment} onChange={(e) => setSelectedDepartment(e.target.value)}>
-            <option value="">All Departments</option>
-            <option value="Radiologist">Radiologist</option>
-            <option value="Neurology">Neurology</option>
-            <option value="Orthopedics">Orthopedics</option>
-            <option value="Dermatology">Dermatology</option>
-            <option value="Pulmonary">Pulmonary</option>
+             <option value="">Select Specialization</option>
+                  <option>Cardiologist</option>
+                  <option>Dermatologist</option>
+                  <option>Neurologist</option>
+                  <option>Orthopedic</option>
+                  <option>Pediatrician</option>
+                  <option>Psychiatrist</option>
+                  <option>Radiologist</option>
+                  <option>ENT Specialist</option>
           </select>
         </div>
       </div>

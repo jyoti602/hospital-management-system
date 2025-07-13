@@ -1,29 +1,65 @@
-import { useNavigate } from "react-router-dom";
-import "./AdminPanel.css"
-import TableComponent from "../../components/Table/TableComponent";
+import React, { useEffect, useState } from 'react';
+import { getDashboardStats } from '../../api/authService';
+import { FaCalendarAlt, FaUserPlus, FaUserMd, FaEnvelopeOpenText } from 'react-icons/fa';
+import './Dashboard.css';
 
-const AdminDashboardPage = () => {
-    const navigate = useNavigate();
-  const appointments = [
-    { time: "9:30 AM", date: "05/12/2022", name: "Elizabeth Polson", initials: "EP", age: 32, doctor: "Dr. John" },
-    { time: "9:30 AM", date: "05/12/2022", name: "John David", initials: "JD", age: 28, doctor: "Dr. Joel" },
-    { time: "10:30 AM", date: "05/12/2022", name: "Krishav Rajan", initials: "KR", age: 24, doctor: "Dr. Joel" },
-    { time: "11:00 AM", date: "05/12/2022", name: "Sumarth Tinson", initials: "ST", age: 26, doctor: "Dr. John" },
-    { time: "11:30 AM", date: "05/12/2022", name: "EG Subramani", initials: "EG", age: 77, doctor: "Dr. John" },
-    { time: "12:00 PM", date: "05/12/2022", name: "Ranjan Maari", initials: "RM", age: 77, doctor: "Dr. John" },
-      { time: "11:00 AM", date: "05/12/2022", name: "Phillipie Gopal", initials: "PG", age: 55, doctor: "Dr. John" },
-     { time: "9:30 AM", date: "05/12/2022", name: "Elizabeth Polson", initials: "EP", age: 32, doctor: "Dr. John" },
-    { time: "9:30 AM", date: "05/12/2022", name: "John David", initials: "JD", age: 28, doctor: "Dr. Joel" },
-    { time: "10:30 AM", date: "05/12/2022", name: "Krishav Rajan", initials: "KR", age: 24, doctor: "Dr. Joel" },
-    { time: "11:00 AM", date: "05/12/2022", name: "Sumarth Tinson", initials: "ST", age: 26, doctor: "Dr. John" },
-    { time: "11:30 AM", date: "05/12/2022", name: "EG Subramani", initials: "EG", age: 77, doctor: "Dr. John" },
-    { time: "12:00 PM", date: "05/12/2022", name: "Ranjan Maari", initials: "RM", age: 77, doctor: "Dr. John" },
-    { time: "11:00 AM", date: "05/12/2022", name: "Phillipie Gopal", initials: "PG", age: 55, doctor: "Dr. John" },
+const AdminDashboard = () => {
+  const [data, setData] = useState({
+    appointments: 0,
+    newPatients: 0,
+    totalDoctors: 0,
+    totalContacts: 0
+  });
+
+  useEffect(() => {
+    getDashboardStats()
+      .then(res => setData(res.data))
+      .catch(err => console.error(err));
+  }, []);
+
+  const cards = [
+    {
+      title: 'Appointments',
+      count: data.appointments,
+      icon: <FaCalendarAlt />,
+      color: 'blue'
+    },
+    {
+      title: 'New Patients',
+      count: data.newPatients,
+      icon: <FaUserPlus />,
+      color: 'green'
+    },
+    {
+      title: 'Total Doctors',
+      count: data.totalDoctors,
+      icon: <FaUserMd />,
+      color: 'yellow'
+    },
+    {
+      title: 'Contact Queries',
+      count: data.totalContacts,
+      icon: <FaEnvelopeOpenText />,
+      color: 'pink'
+    }
   ];
 
   return (
-        <>Dashboard</>
+    <div className="dashboard-container">
+      <h2 className="dashboard-title"> Dashboard</h2>
+      <div className="dashboard-grid">
+        {cards.map((card, index) => (
+          <div key={index} className={`dashboard-card ${card.color}`}>
+            <div className="dashboard-icon">{card.icon}</div>
+            <div className="dashboard-content">
+              <h3>{card.count}</h3>
+              <p>{card.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default AdminDashboardPage;
+export default AdminDashboard;

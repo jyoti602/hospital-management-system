@@ -3,7 +3,6 @@ import axios from "axios";
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-
 // ======================== AUTH ========================
 export const signupUser = async (userData) => {
   return await axios.post(`${API_BASE_URL}/auth/signup`, userData);
@@ -68,5 +67,6 @@ export const updateDoctor = async (id, data) => {
 export const deleteDoctor = async (id) => {
   return await axios.delete(`${API_BASE_URL}/doctor/${id}`);
 };
-
-
+export const getDashboardStats = async () => {
+  return await axios.get(`${API_BASE_URL}/dashboard-stats`);
+};

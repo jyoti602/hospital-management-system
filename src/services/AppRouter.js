@@ -17,6 +17,7 @@ import TestimonialsSection from '../pages/Home/TestimonialsSection';
 import PatientDetails from '../pages/Admin/PatientDetails';
 
 
+
 const AppRouter = () => {
 const loginData = JSON.parse(localStorage.getItem('login') || '{}');
 const isAdmin = loginData.success === true ;
@@ -41,8 +42,6 @@ const isAdmin = loginData.success === true ;
           <Route path="appointments-details" element={<AppoinmentDetails />} />
           <Route path="doctor-details" element={<DoctorDetails />} />
            <Route path="patient-details" element={< PatientDetails/>} />
-        
-
           {/* Add more protected admin routes here */}
         </Route>
       </Route>

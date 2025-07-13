@@ -1,13 +1,23 @@
 import React from 'react';
 import './AboutUsSection.css';
-
+import { useNavigate } from 'react-router-dom';
 const AboutUsSection = () => {
+
+  const navigate = useNavigate();
+  const handleMoreAboutClick = () => {
+    navigate('/novacare'); // Navigates to the /novacare route
+  };
+
   return (
     <section className="aboutus-section" id="about-us">
       <div className="aboutus-container">
         <div className="aboutus-img-col">
           <div className="aboutus-img-wrap">
-            <img src="/images/doctorA.jpg" alt="Doctors" className="aboutus-img" />
+            <img
+              src="/images/doctorA.jpg"
+              alt="Experienced Doctors"
+              className="aboutus-img"
+            />
           </div>
         </div>
         <div className="aboutus-content-col">
@@ -15,11 +25,13 @@ const AboutUsSection = () => {
             <span className="aboutus-label">About Us</span>
             <span className="aboutus-label-underline"></span>
           </div>
-          <h2 className="aboutus-title">Quality Care For Every<br/>Stage Of Life</h2>
+          <h2 className="aboutus-title">
+            Quality Care For Every<br />Stage Of Life
+          </h2>
           <p className="aboutus-desc">
-            We're a dedicated team committed to helping you achieve optimal health and wellness. With a focus on well-being, we combine expert knowledge
+            We're a dedicated team committed to helping you achieve optimal health and wellness. With a focus on well-being, we combine expert knowledge with compassionate care.
           </p>
-          <button className="aboutus-btn">
+          <button className="aboutus-btn" onClick={handleMoreAboutClick}>
             More About <span className="aboutus-btn-arrow">→</span>
           </button>
         </div>

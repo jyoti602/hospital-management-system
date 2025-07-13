@@ -31,6 +31,13 @@
   gap: 10px;
   justify-content: center;
 }
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 
 .avatar-circle {
   width: 35px;
@@ -96,4 +103,18 @@
 .pagination-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+
+/* ======= Horizontal Scroll for Mobile View ======= */
+@media (max-width: 768px) {
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .custom-table {
+    min-width: 700px; /* or 1000px if more columns */
+  }
 }

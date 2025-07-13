@@ -12,7 +12,7 @@ const Footer = () => {
             <span className="footer-logo-text">NovaCare</span>
           </div>
           <p className="footer-desc">
-            Lorem ipsum dolor sit amet consectetur. Dictum eget sit scelerisque lorem pulvinar. Sapien
+           "Empowering NovaCare with seamless technology – Your health, our priority."
           </p>
           <div className="footer-newsletter-label">Subscribe Newsletter</div>
           <form className="footer-newsletter-form">
@@ -24,9 +24,9 @@ const Footer = () => {
         <div className="footer-links-col">
           <div className="footer-links-title">Quick Links</div>
           <a href="home">Home</a>
-          <a href="about-Us">About-Us</a>
-          <a href="services">Services</a>
-          <a href="articles">Articles</a>
+          <a href="about-Us-Section">About-Us</a>
+          <a href="Service-Cards-Section">Services</a>
+          <a href="testimonials-Section">Articles</a>
         </div>
         {/* Utility Pages */}
         <div className="footer-links-col">

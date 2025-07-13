@@ -8,15 +8,28 @@ import Signup from '../components/Signup/Signup';
 import BookAppointmentPage from '../pages/BookAppointment/BookAppointmentPage';
 import AdminLayout from '../pages/Admin/AdminLayout';
 import ProtectedRoute from './ProtectedRoute';
+import AppoinmentDetails from '../pages/Admin/AppoinmentDetails';
+import DoctorDetails from '../pages/Admin/DoctorDetails';
+import Testing from '../pages/Testing/Testing';
+import AboutUsSection from '../pages/Home/AboutUsSection';
+import ServiceCardsSection from '../pages/Home/ServiceCardsSection';
+import TestimonialsSection from '../pages/Home/TestimonialsSection';
+import PatientDetails from '../pages/Admin/PatientDetails';
+
 
 const AppRouter = () => {
 const loginData = JSON.parse(localStorage.getItem('login') || '{}');
 const isAdmin = loginData.success === true ;
   return (
     <Routes>
+      <Route path="testing" element={<Testing />} />
+      
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/nova-care" element={<NovaCare />} />
+      <Route path="/about-Us-Section" element={<AboutUsSection />} />
+      <Route path="/Service-Cards-Section" element={<ServiceCardsSection />} />
+      <Route path="/novacare" element={<NovaCare />} />
+      <Route path="/testimonials-Section" element={<TestimonialsSection />} />
       <Route path="/contact" element={<ContactUsPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
@@ -24,12 +37,15 @@ const isAdmin = loginData.success === true ;
      <Route element={<ProtectedRoute isAllowed={isAdmin} />}>
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
-          {/* <Route path="doctor" element={<Doctor />} />
-          <Route path="patients" element={<Patients />} /> */}
+          {/* <Route path="doctor" element={<Doctor />} /> */}
+          <Route path="appointments-details" element={<AppoinmentDetails />} />
+          <Route path="doctor-details" element={<DoctorDetails />} />
+           <Route path="patient-details" element={< PatientDetails/>} />
+        
+
           {/* Add more protected admin routes here */}
         </Route>
       </Route>
-      
     </Routes>
   );
 };

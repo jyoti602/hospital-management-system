@@ -136,6 +136,7 @@
   border-radius: 20px;
   margin-bottom: 1.2rem;
   display: inline-block;
+  margin-top: 50px;
 }
 .visionteam-team-title {
   font-size: 2rem;
@@ -166,19 +167,11 @@
   transition: box-shadow 0.2s, transform 0.2s;
   margin-bottom: 1.5rem;
   text-align: center;
+  height: 90px;
 }
 .visionteam-doctor-card:hover {
   box-shadow: 0 8px 32px rgba(108, 99, 255, 0.13);
   transform: translateY(-6px) scale(1.03);
-}
-.visionteam-doctor-photo {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.2rem;
-  border: 3px solid #edeaff;
-  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.08);
 }
 .visionteam-doctor-name {
   color: #222;
@@ -229,8 +222,19 @@
   .visionteam-doctor-card {
     padding: 1.2rem 1rem 1rem 1rem;
   }
-  .visionteam-doctor-photo {
-    width: 48px;
-    height: 48px;
-  }
+
 } 
+
+.initials-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+

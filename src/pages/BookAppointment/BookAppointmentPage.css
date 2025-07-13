@@ -5,7 +5,6 @@
 }
 .book-appointment-hero {
   width: 100%;
-  min-height: 320px;
   background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
   display: flex;
   align-items: center;
@@ -24,13 +23,7 @@
   margin-bottom: 1.1rem;
   letter-spacing: 1px;
 }
-.book-appointment-hero-subtitle {
-  font-size: 1.18rem;
-  font-weight: 400;
-  margin-bottom: 2.2rem;
-  color: #edeaff;
-}
-.book-appointment-hero-btn {
+ook-appointment-hero-btn {
   background: #fff;
   color: #6c63ff;
   font-size: 1.15rem;
@@ -62,3 +55,7 @@
     margin-top: -1.2rem;
   }
 } 
+.appointment-hero-content{
+  display: flex;
+justify-content: space-between;
+}

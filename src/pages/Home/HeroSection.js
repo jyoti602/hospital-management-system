@@ -14,7 +14,7 @@ const HeroSection = () => {
         <div className="hero-left">
           <span className="hero-welcome">Welcome to Novacare</span>
           <h1 className="hero-title">
-            Get Premium  NovaCare For Your Health
+          Your Health, Our Priority – NovaCare
           </h1>
          
           <div className="hero-cta-row">

@@ -39,7 +39,6 @@
 }
 
 .testimonials-cards-row {
-  display: flex;
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
@@ -117,3 +116,25 @@
     height: 48px;
   }
 } 
+.initials-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #6c63ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}

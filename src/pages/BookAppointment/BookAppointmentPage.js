@@ -16,12 +16,7 @@ const BookAppointmentPage = () => {
       <section className="book-appointment-hero">
         <div className="book-appointment-hero-content">
           <h1 className="book-appointment-hero-title">Book Your Appointment</h1>
-          <p className="book-appointment-hero-subtitle">
-            Schedule your visit with our expert doctors. Fast, easy, and personalized care for you and your family.
-          </p>
-          <button className="book-appointment-hero-btn" onClick={handleScrollToForm}>
-            Book Appointment
-          </button>
+          
         </div>
       </section>
       <div ref={formRef} className="book-appointment-form-wrapper">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -13,6 +13,9 @@ const schema = Yup.object().shape({
 });
 
 const Login = () => {
+
+const [errorMessage, setErrorMesage]  = useState()
+
   const {
     handleSubmit,
     control,
@@ -31,12 +34,15 @@ const Login = () => {
       console.log(response)
       if (response.status === 200 || response.status === 201) {
         console.log(response.data)
-      localStorage.setItem('login', JSON.stringify(response.data));
-      navigate('/admin');
+        localStorage.setItem('login', JSON.stringify(response.data));
+        navigate('/admin');
       }
+
     } catch (error) {
+      if (error.response?.status === 401) {
+        setErrorMesage(error.response.data.message)
+      }
     }
-  
   };
 
   return (
@@ -82,8 +88,8 @@ const Login = () => {
 
           <button className="login-btn" type="submit">Login</button>
 
-          {isSubmitSuccessful && (
-            <div className="form-success">Login successful!</div>
+          {errorMessage && (
+            <div className="form-error">{errorMessage}</div>
           )}
         </form>
 

@@ -6,6 +6,7 @@ import WhyChooseUsSection from './WhyChooseUsSection';
 import VisionAndTeamSection from './VisionAndTeamSection';
 import TestimonialsSection from './TestimonialsSection';
 
+
 const Home = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const Home = () => {
       <WhyChooseUsSection />
       <VisionAndTeamSection />
       <TestimonialsSection />
+    
     </div>
   );
 };

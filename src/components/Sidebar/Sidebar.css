@@ -1,7 +1,7 @@
 /* ====== Sidebar Styles ====== */
 .sidebar {
   width: 220px;
-  background-color: #e9f2fa;
+  /* background-color: #e9f2fa; */
   min-height: 100vh;
   padding: 20px 16px;
   box-sizing: border-box;

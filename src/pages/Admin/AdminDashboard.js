@@ -22,26 +22,7 @@ const AdminDashboardPage = () => {
   ];
 
   return (
-        <div className="admin-appointment-section">
-          <div className="appointment-header">
-            <div className="tabs">
-              <button className="tab active">NEW APPOINTMENTS</button>
-              <button className="tab">COMPLETED APPOINTMENTS</button>
-            </div>
-            <button className="new-appointment-btn" onClick={() => navigate("/appointment")}>+ New Appointment</button>
-          </div>
-          <div className="filters">
-            <div className="search-box">
-              <input type="text" placeholder="Search" />
-            </div>
-          </div>
-
-            <TableComponent
-            columns={["Time", "Date", "Name", "Age", "Doctor"]}
-            data={appointments}
-            rowsPerPage={4}
-            />
-        </div>
+        <>Dashboard</>
   );
 };
 

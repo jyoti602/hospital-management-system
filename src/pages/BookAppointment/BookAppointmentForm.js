@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
@@ -6,59 +6,52 @@ import './BookAppointmentForm.css';
 import { bookAppointments } from '../../api/authService';
 
 const departments = [
-  'Cardiology', 'Neurology', 'Orthopedics', 'Pulmonary',
+  'Radiologist', 'Neurology', 'Orthopedics', 'Pulmonary',
   'Laboratory', 'General Medicine', 'Gynecology', 'Urology', 'Ophthalmology',
-];
-
-const doctors = [
-  'Dr. John Smith', 'Dr. Emily Brown', 'Dr. Michael Lee',
-  'Dr. Sarah Johnson', 'Dr. David Kim',
 ];
 
 const schema = Yup.object().shape({
   patient: Yup.string().required('Patient name is required'),
   contact: Yup.string().required('Contact info is required'),
   department: Yup.string().required('Department is required'),
-  doctor: Yup.string().required('Doctor is required'),
   date: Yup.string().required('Date is required'),
   time: Yup.string().required('Time is required'),
   reason: Yup.string(),
 });
 
 const BookAppointmentForm = () => {
-  const [appointments, setAppointments] = useState([]);
   const [successMsg, setSuccessMsg] = useState(false);
 
   const {
     control,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
       patient: '',
       contact: '',
       department: '',
-      doctor: '',
       date: '',
       time: '',
       reason: '',
     },
   });
+
   const onSubmit = async (data) => {
-  
-  try {
-    const response = await bookAppointments(data);
-
-    if (response.status === 200 || response.status === 201) {
-      reset();
-    } 
-  } catch (error) {
-  }
+    try {
+      const response = await bookAppointments(data);
+      if (response.status === 200 || response.status === 201) {
+        reset();
+        setSuccessMsg(response.data.message || 'Appointment booked successfully!');
+      }
+    } catch (error) {
+      console.error('Appointment booking failed:', error);
+    }
   };
-  
 
+  
   return (
     <div className="appointment-form-card">
       <h2 className="appointment-form-title">Book Appointment</h2>
@@ -66,7 +59,7 @@ const BookAppointmentForm = () => {
       <form className="appointment-form" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         {/* Patient Name */}
         <div className="appointment-form-group">
-          <label>Patient Name<span>*</span></label>
+          <label>Patient Name <span>*</span></label>
           <Controller
             name="patient"
             control={control}
@@ -79,7 +72,7 @@ const BookAppointmentForm = () => {
 
         {/* Contact Info */}
         <div className="appointment-form-group">
-          <label>Contact Info<span>*</span></label>
+          <label>Contact Info <span>*</span></label>
           <Controller
             name="contact"
             control={control}
@@ -92,7 +85,7 @@ const BookAppointmentForm = () => {
 
         {/* Department */}
         <div className="appointment-form-group">
-          <label>Department<span>*</span></label>
+          <label>Department <span>*</span></label>
           <Controller
             name="department"
             control={control}
@@ -108,28 +101,10 @@ const BookAppointmentForm = () => {
           {errors.department && <div className="form-error">{errors.department.message}</div>}
         </div>
 
-        {/* Doctor */}
-        <div className="appointment-form-group">
-          <label>Doctor<span>*</span></label>
-          <Controller
-            name="doctor"
-            control={control}
-            render={({ field }) => (
-              <select {...field} className={errors.doctor ? 'error' : ''}>
-                <option value="">Select doctor</option>
-                {doctors.map((doc) => (
-                  <option key={doc} value={doc}>{doc}</option>
-                ))}
-              </select>
-            )}
-          />
-          {errors.doctor && <div className="form-error">{errors.doctor.message}</div>}
-        </div>
-
         {/* Date and Time */}
         <div className="appointment-form-row">
           <div className="appointment-form-group">
-            <label>Date<span>*</span></label>
+            <label>Date <span>*</span></label>
             <Controller
               name="date"
               control={control}
@@ -139,8 +114,9 @@ const BookAppointmentForm = () => {
             />
             {errors.date && <div className="form-error">{errors.date.message}</div>}
           </div>
+
           <div className="appointment-form-group">
-            <label>Time<span>*</span></label>
+            <label>Time <span>*</span></label>
             <Controller
               name="time"
               control={control}
@@ -164,7 +140,7 @@ const BookAppointmentForm = () => {
           />
         </div>
 
-        {/* Submit */}
+        {/* Submit Button */}
         <button className="appointment-form-btn" type="submit">Book Appointment</button>
 
         {/* Success Message */}

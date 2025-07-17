@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
-import{
+import {
   FaTachometerAlt,
   FaUserInjured,
   FaCalendarAlt,
@@ -9,53 +8,69 @@ import{
   FaComments,
   FaBoxes,
   FaCog,
-  FaSignOutAlt
+  FaSignOutAlt,
+  FaBars,
+  FaTimes
 } from "react-icons/fa";
 import "./Sidebar.css";
 
-// Sidebar item configuration
 const sidebarItems = [
   { path: "/admin", label: "Dashboard", icon: FaTachometerAlt },
   { path: "/admin/patient-details", label: "Patients", icon: FaUserInjured },
   { path: "/admin/appointments-details", label: "Appointments", icon: FaCalendarAlt },
   { path: "/admin/doctor-details", label: "Doctors", icon: FaUserMd },
-  // { path: "/admin/", label: "Messages", icon: FaComments },
-  // { path: "/admin/", label: "Inventory", icon: FaBoxes },
-  // { path: "/admin/", label: "Settings", icon: FaCog },
 ];
 
 const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const isActive = (path) => location.pathname === path;
 
   const handleLogout = () => {
-    // Remove login info from localStorage
-    localStorage.removeItem('login'); // or localStorage.clear() if needed
-    // Redirect to login page
+    localStorage.removeItem('login');
     navigate('/login');
   };
 
-  return (
-    <aside className="sidebar">
-      <nav>
-      <div className="hero-logo-row">
-  <a href="/">
-    <img src="/images/company_logo.jpg" alt="Company Logo" height={60} width={200} />
-  </a>
-</div>
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
-        {sidebarItems.map(({ path, label, icon: Icon }) => (
-          <Link key={path} to={path} className={isActive(path) ? "active" : ""}>
-            <Icon className="sidebar-icon" /> {label}
-          </Link>
-        ))}
-      </nav>
-      <button className="logout-btn" onClick={handleLogout}>
-        <FaSignOutAlt className="sidebar-icon" /> Logout
-      </button>
-    </aside>
+  return (
+    <>
+      {/* Mobile header */}
+      <div className="mobile-header">
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* Sidebar */}
+      <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+        <nav>
+          <div className="hero-logo-row">
+            <a href="/">
+              <img src="/images/company_logo.jpg" alt="Company Logo" height={60} width={200} />
+            </a>
+          </div>
+
+          {sidebarItems.map(({ path, label, icon: Icon }) => (
+            <Link 
+              key={path} 
+              to={path} 
+              className={isActive(path) ? "active" : ""}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Icon className="sidebar-icon" /> <span className="menu-label">{label}</span>
+            </Link>
+          ))}
+        </nav>
+        <button className="logout-btn" onClick={handleLogout}>
+          <FaSignOutAlt className="sidebar-icon" /> <span className="menu-label">Logout</span>
+        </button>
+      </aside>
+    </>
   );
 };
 

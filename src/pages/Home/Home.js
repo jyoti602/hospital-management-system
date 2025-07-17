@@ -7,6 +7,7 @@ import VisionAndTeamSection from './VisionAndTeamSection';
 import TestimonialsSection from './TestimonialsSection';
 
 
+
 const Home = () => {
   return (
     <div>

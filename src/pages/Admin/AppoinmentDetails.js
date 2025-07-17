@@ -126,15 +126,15 @@ const AppointmentDetails = () => {
         <div className="filter-box">
           <FaFilter className="icon" />
           <select value={selectedDepartment} onChange={(e) => setSelectedDepartment(e.target.value)}>
-             <option value="">Select Specialization</option>
-                  <option>Cardiologist</option>
-                  <option>Dermatologist</option>
-                  <option>Neurologist</option>
-                  <option>Orthopedic</option>
-                  <option>Pediatrician</option>
-                  <option>Psychiatrist</option>
-                  <option>Radiologist</option>
-                  <option>ENT Specialist</option>
+            <option value="">Select Specialization</option>
+            <option>Cardiologist</option>
+            <option>Dermatologist</option>
+            <option>Neurologist</option>
+            <option>Orthopedic</option>
+            <option>Pediatrician</option>
+            <option>Psychiatrist</option>
+            <option>Radiologist</option>
+            <option>ENT Specialist</option>
           </select>
         </div>
       </div>
@@ -144,15 +144,16 @@ const AppointmentDetails = () => {
       ) : error ? (
         <div className="error-message">{error}</div>
       ) : (
-        <div className="table-responsive">
-          <TableComponent
-            columns={columns}
-            data={dataWithActions}
-            rowsPerPage={6}
-          />
+        <div className="table-scroll-wrapper">
+          <div className="table-scroll">
+            <TableComponent
+              columns={columns}
+              data={dataWithActions}
+              rowsPerPage={5}
+            />
+          </div>
         </div>
       )}
-
       {/* Status Edit Modal */}
       {showStatusModal && (
         <div className="edit-modal-overlay">

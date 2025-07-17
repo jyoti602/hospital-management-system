@@ -34,14 +34,9 @@
 }
 
 .nova-title {
-    font-size: 1.875rem;
+    font-size: 20px;
     color: #1e3a8a; /* Darker blue for titles */
     font-weight: bold;
-}
-
-dashboard-content h3, p {
-    font-size: 15px;
-    font-weight: 700;
 }
 
 .nova-subtitle {
@@ -187,6 +182,7 @@ dashboard-content h3, p {
     text-decoration: none;
     font-weight: 500;
     transition: background-color 0.3s ease-in-out;
+  
 }
 
 .nova-cta-button:hover {

@@ -39,6 +39,11 @@
     font-weight: bold;
 }
 
+dashboard-content h3, p {
+    font-size: 15px;
+    font-weight: 700;
+}
+
 .nova-subtitle {
     color: #6b7280;
     margin-top: 0.5rem;

@@ -63,6 +63,20 @@
 /* Page Header and Hero Section */
 .admin-appointment-page {
   font-family: 'Segoe UI', sans-serif;
+  display: grid;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.appointment-hero-content{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+
+}
+ .appointment-hero-content h1{
+  color: #007bff;
 }
 
 .appointment-hero {

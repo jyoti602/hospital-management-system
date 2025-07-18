@@ -104,14 +104,12 @@ const AppointmentDetails = () => {
 
   return (
     <div className="admin-appointment-page">
-      <section className="appointment-hero">
         <div className="appointment-hero-content">
           <h1>Appointment Details</h1>
           <button className="new-appointment-btn" onClick={() => navigate("/book-appointment")}>
             <FaPlus /> Book Appointment
           </button>
         </div>
-      </section>
 
       <div className="appointment-toolbar">
         <div className="search-box">

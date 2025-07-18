@@ -52,7 +52,7 @@ const AdminDashboard = () => {
           <div key={index} className={`dashboard-card ${card.color}`}>
             <div className="dashboard-icon">{card.icon}</div>
             <div className="dashboard-content">
-              <h3>{card.count}</h3>
+              <h2>{card.count}</h2>
               <p>{card.title}</p>
             </div>
           </div>

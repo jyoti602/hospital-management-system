@@ -5,9 +5,6 @@ import {
   FaUserInjured,
   FaCalendarAlt,
   FaUserMd,
-  FaComments,
-  FaBoxes,
-  FaCog,
   FaSignOutAlt,
   FaBars,
   FaTimes
@@ -48,6 +45,13 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+        {/* Mobile-only close button */}
+        <div className="sidebar-close-btn">
+          <button onClick={toggleMobileMenu}>
+            <FaTimes />
+          </button>
+        </div>
+
         <nav>
           <div className="hero-logo-row">
             <a href="/">
@@ -66,6 +70,7 @@ const Sidebar = () => {
             </Link>
           ))}
         </nav>
+
         <button className="logout-btn" onClick={handleLogout}>
           <FaSignOutAlt className="sidebar-icon" /> <span className="menu-label">Logout</span>
         </button>

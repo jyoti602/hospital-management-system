@@ -9,6 +9,7 @@ import { AvatarGenerator, stringToColor } from '../../utils/AvatarGenerator';
 
 const TestimonialsSection = () => {
   const [testimonials, setTestimonials] = useState([]);
+  const [expandedStates, setExpandedStates] = useState({});
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -23,6 +24,13 @@ const TestimonialsSection = () => {
 
     fetchTestimonials();
   }, []);
+
+  const toggleExpanded = (idx) => {
+    setExpandedStates((prev) => ({
+      ...prev,
+      [idx]: !prev[idx],
+    }));
+  };
 
   return (
     <section className="testimonials-section">
@@ -45,20 +53,38 @@ const TestimonialsSection = () => {
             1024: { slidesPerView: 3 },
           }}
         >
-          {testimonials.map((t, idx) => (
-            <SwiperSlide key={idx}>
-              <div className="testimonial-card">
-                <div
-                  className="initials-avatar"
-                  style={{ backgroundColor: stringToColor(t?.name || '') }}
-                >
-                  {AvatarGenerator(t?.name || '')}
+          {testimonials.map((t, idx) => {
+            const isLong = t.message?.split(' ').length > 20;
+            const isExpanded = expandedStates[idx];
+
+            return (
+              <SwiperSlide key={idx}>
+                <div className="testimonial-card">
+                  <div
+                    className="initials-avatar"
+                    style={{ backgroundColor: stringToColor(t?.name || '') }}
+                  >
+                    {AvatarGenerator(t?.name || '')}
+                  </div>
+
+                  <p className={`testimonial-quote ${!isExpanded && isLong ? 'truncated' : ''}`}>
+                    “{t.message}”
+                  </p>
+
+                  {isLong && (
+                    <button
+                      className="read-more-btn"
+                      onClick={() => toggleExpanded(idx)}
+                    >
+                      {isExpanded ? 'Read Less' : 'Read More'}
+                    </button>
+                  )}
+
+                  <div className="testimonial-name">{t.name}</div>
                 </div>
-                <p className="testimonial-quote">“{t.message}”</p>
-                <div className="testimonial-name">{t.name}</div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </section>

@@ -1,36 +1,42 @@
-/* Modal Overlay */
+/* ---------------------- Modal Overlay ---------------------- */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
+  z-index: 999;
+  padding: 10px;
+  overflow-y: auto;
 }
 
-/* Modal Container */
+/* ---------------------- Modal Container ---------------------- */
 .modal {
-  width: 53%;
-  max-width: 900px;
-  background: #fff;
+  background-color: #fff;
+  width: 90%;
+  max-width: 800px;
   border-radius: 20px;
   padding: 24px 30px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   max-height: 90vh;
   overflow-y: auto;
+  position: relative;
 }
 
+/* ---------------------- Modal Header ---------------------- */
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding-bottom: 12px;
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 20px;
   position: sticky;
-  top: 0px;
+  top: 0;
   background-color: white;
+  z-index: 10;
 }
 
 .modal-title {
@@ -60,12 +66,14 @@
   color: #2c3e50;
 }
 
+/* ---------------------- Close Button ---------------------- */
 .close-btn {
-  font-size: 24px;
   background: none;
   border: none;
-  color: #888;
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
+  color: #555;
   transition: color 0.3s;
 }
 
@@ -73,36 +81,69 @@
   color: #e74c3c;
 }
 
-/* Section Styling */
+/* Show close button on mobile only */
+@media (max-width: 768px) {
+  .close-btn {
+    display: block;
+  }
+}
+
+/* ---------------------- Form Sections ---------------------- */
 .form-section {
   background-color: #f8fbff;
   padding: 20px 24px;
   border-radius: 18px;
   margin-bottom: 24px;
 }
+
 .form-section h4 {
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: 600;
   color: #34495e;
 }
+
 .form-section hr {
   margin-bottom: 16px;
   border: 1px solid #e2ecf4;
 }
 
-/* Grid */
+/* ---------------------- Form Grid ---------------------- */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
-/* Input Groups */
+/* Mobile: single column */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+/* ---------------------- Form Fields ---------------------- */
 .form-group {
   display: flex;
   flex-direction: column;
 }
+
 .form-group label {
   font-weight: 600;
   margin-bottom: 5px;
@@ -111,6 +152,7 @@
   gap: 8px;
   color: #2c3e50;
 }
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -120,54 +162,25 @@
   font-size: 15px;
   background-color: #fff;
 }
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #aaa;
   font-style: italic;
 }
+
 textarea {
   resize: vertical;
   min-height: 80px;
 }
 
-/* Error Message */
+/* ---------------------- Error & Success Messages ---------------------- */
 .error {
   color: #e74c3c;
   font-size: 13px;
   margin-top: 4px;
 }
 
-/* Modal Buttons */
-.modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 20px;
-}
-.cancel-btn,
-.submit-btn {
-  padding: 10px 22px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.cancel-btn {
-  background-color: #bdc3c7;
-  color: #2c3e50;
-}
-.cancel-btn:hover {
-  background-color: #95a5a6;
-}
-.submit-btn {
-  background-color: #3498db;
-  color: #fff;
-}
-.submit-btn:hover {
-  background-color: #2980b9;
-}
-
-/* Success Message */
 .success-message-popup {
   margin-top: 16px;
   padding: 10px;
@@ -178,23 +191,38 @@ textarea {
   font-weight: 500;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .modal {
-    padding: 20px;
-  }
+/* ---------------------- Modal Buttons ---------------------- */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
 
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
+.cancel-btn,
+.submit-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-  .modal-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
+.cancel-btn {
+  background-color: #bdc3c7;
+  color: #2c3e50;
+}
 
-  .cancel-btn,
-  .submit-btn {
-    width: 100%;
-  }
+.cancel-btn:hover {
+  background-color: #95a5a6;
+}
+
+.submit-btn {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
 }

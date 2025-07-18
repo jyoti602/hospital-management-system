@@ -18,15 +18,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 400px; /* Ensures a decent height for the hero section */
+  min-height: 225px; /* Ensures a decent height for the hero section */
   box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
 .book-appointment-hero-content {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex; /* Use flex for content within hero */
-  flex-direction: column; /* Stack title, subtitle, button */
+  /* flex-direction: column; Stack title, subtitle, button */
   align-items: center; /* Center items horizontally */
   gap: 20px; /* Spacing between elements */
   padding: 0 15px; /* Add some horizontal padding for very small screens */
@@ -37,13 +37,10 @@
   margin: 0; /* Reset default margin */
   letter-spacing: 1.5px; /* Spacing for better readability */
   line-height: 1.2;
+ 
 }
 
-.book-appointment-hero-subtitle {
-  font-size: 1.2em;
-  margin: 0; /* Reset default margin */
-  line-height: 1.6;
-}
+
 
 .book-appointment-scroll-button {
   background-color: #ffc107; /* A contrasting color for the button */
@@ -94,15 +91,11 @@
 @media (max-width: 768px) {
   .book-appointment-hero {
     padding: 60px 15px;
-    min-height: 350px;
+    min-height: 144px;
   }
 
   .book-appointment-hero-title {
     font-size: 2.5em; /* Adjust font size for smaller screens */
-  }
-
-  .book-appointment-hero-subtitle {
-    font-size: 1em;
   }
 
   .book-appointment-scroll-button {
@@ -128,10 +121,6 @@
 
   .book-appointment-hero-title {
     font-size: 2em; /* Further reduce font size for very small screens */
-  }
-
-  .book-appointment-hero-subtitle {
-    font-size: 0.9em;
   }
 
   .book-appointment-scroll-button {

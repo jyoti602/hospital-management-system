@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
 import { getTestimonials } from '../../api/authService';
 import { AvatarGenerator, stringToColor } from '../../utils/AvatarGenerator';
 
@@ -17,25 +18,25 @@ const TestimonialsSection = () => {
     const fetchTestimonials = async () => {
       try {
         const response = await getTestimonials();
-        setTestimonials(response.data || response);
+        setTestimonials(response?.data || []);
       } catch (error) {
-        console.error("Error fetching testimonials:", error);
+        console.error('Error fetching testimonials:', error);
       }
     };
+
     fetchTestimonials();
   }, []);
 
-  const toggleExpanded = (idx) => {
+  const toggleExpanded = (index) => {
     setExpandedStates((prev) => ({
       ...prev,
-      [idx]: !prev[idx],
+      [index]: !prev[index],
     }));
   };
 
   return (
     <section className="testimonials-section">
       <div className="testimonials-header">
-        <div className="testimonials-label">Testimonials</div>
         <h2 className="testimonials-title">What Our Patients Say</h2>
         <p className="testimonials-subtitle">
           Real stories from real patients who trusted NovaCare for their health journey.
@@ -53,22 +54,25 @@ const TestimonialsSection = () => {
             1024: { slidesPerView: 3 },
           }}
         >
-          {testimonials.map((t, idx) => {
-            const isLong = (t.message || '').length > MAX_CHAR_LIMIT;
-            const isExpanded = expandedStates[idx];
+          {testimonials.map((testimonial, index) => {
+            const message = testimonial?.message || '';
+            const name = testimonial?.name || 'Anonymous';
+            const isLong = message.length > MAX_CHAR_LIMIT;
+            const isExpanded = expandedStates[index];
 
-            const displayMessage = isExpanded || !isLong
-              ? t.message
-              : `${t.message.slice(0, MAX_CHAR_LIMIT)}...`;
+            const displayMessage =
+              isExpanded || !isLong
+                ? message
+                : `${message.slice(0, MAX_CHAR_LIMIT)}...`;
 
             return (
-              <SwiperSlide key={idx}>
+              <SwiperSlide key={`testimonial-${index}`}>
                 <div className="testimonial-card">
                   <div
                     className="initials-avatar"
-                    style={{ backgroundColor: stringToColor(t?.name || '') }}
+                    style={{ backgroundColor: stringToColor(name) }}
                   >
-                    {AvatarGenerator(t?.name || '')}
+                    {AvatarGenerator(name)}
                   </div>
 
                   <p className="testimonial-quote">“{displayMessage}”</p>
@@ -76,13 +80,13 @@ const TestimonialsSection = () => {
                   {isLong && (
                     <button
                       className="read-more-btn"
-                      onClick={() => toggleExpanded(idx)}
+                      onClick={() => toggleExpanded(index)}
                     >
                       {isExpanded ? 'Read Less' : 'Read More'}
                     </button>
                   )}
 
-                  <div className="testimonial-name">{t.name}</div>
+                  <div className="testimonial-name">{name}</div>
                 </div>
               </SwiperSlide>
             );

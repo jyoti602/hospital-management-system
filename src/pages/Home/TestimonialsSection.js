@@ -7,6 +7,8 @@ import 'swiper/css/pagination';
 import { getTestimonials } from '../../api/authService';
 import { AvatarGenerator, stringToColor } from '../../utils/AvatarGenerator';
 
+const MAX_CHAR_LIMIT = 60;
+
 const TestimonialsSection = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [expandedStates, setExpandedStates] = useState({});
@@ -15,13 +17,11 @@ const TestimonialsSection = () => {
     const fetchTestimonials = async () => {
       try {
         const response = await getTestimonials();
-        console.log("Fetched testimonials:", response);
         setTestimonials(response.data || response);
       } catch (error) {
         console.error("Error fetching testimonials:", error);
       }
     };
-
     fetchTestimonials();
   }, []);
 
@@ -54,8 +54,12 @@ const TestimonialsSection = () => {
           }}
         >
           {testimonials.map((t, idx) => {
-            const isLong = t.message?.split(' ').length > 20;
+            const isLong = (t.message || '').length > MAX_CHAR_LIMIT;
             const isExpanded = expandedStates[idx];
+
+            const displayMessage = isExpanded || !isLong
+              ? t.message
+              : `${t.message.slice(0, MAX_CHAR_LIMIT)}...`;
 
             return (
               <SwiperSlide key={idx}>
@@ -67,9 +71,7 @@ const TestimonialsSection = () => {
                     {AvatarGenerator(t?.name || '')}
                   </div>
 
-                  <p className={`testimonial-quote ${!isExpanded && isLong ? 'truncated' : ''}`}>
-                    “{t.message}”
-                  </p>
+                  <p className="testimonial-quote">“{displayMessage}”</p>
 
                   {isLong && (
                     <button

@@ -19,6 +19,7 @@
   flex-direction: column;
   gap: 1.2rem;
 }
+
 .footer-logo-row {
   display: flex;
   align-items: center;
@@ -27,26 +28,35 @@
   font-weight: 700;
   color: #6c63ff;
 }
-.footer-logo-icon {
-  font-size: 2.2rem;
+
+.footer-logo-img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 8px;
 }
+
 .footer-logo-text {
   color: #6c63ff;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
 }
+
 .footer-desc {
   color: #555;
   font-size: 1.08rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
+
 .footer-newsletter-label {
   font-weight: 600;
   margin-bottom: 0.3rem;
   color: #222;
 }
+
 .footer-newsletter-form {
   display: flex;
   align-items: center;
@@ -56,6 +66,7 @@
   max-width: 320px;
   margin-top: 0.2rem;
 }
+
 .footer-newsletter-input {
   border: none;
   background: transparent;
@@ -65,6 +76,7 @@
   flex: 1 1 0;
   padding: 0.7rem 0;
 }
+
 .footer-newsletter-btn {
   background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
   color: #fff;
@@ -81,6 +93,7 @@
   margin-left: 0.5rem;
   transition: background 0.2s, transform 0.2s;
 }
+
 .footer-newsletter-btn:hover {
   background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
   transform: translateY(-2px);
@@ -91,62 +104,81 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .footer-links-title {
   font-weight: 700;
   color: #222;
   font-size: 1.1rem;
   margin-bottom: 0.7rem;
 }
-.footer-links-col a {
+
+/* Use this class when replacing <a> with <span> in Footer.js */
+.footer-link {
+  cursor: pointer;
   color: #444;
-  text-decoration: none;
   font-size: 1.05rem;
+  text-decoration: none;
+  display: block;
+  margin: 0.2rem 0;
   transition: color 0.2s;
-  margin-bottom: 0.2rem;
 }
-.footer-links-col a:hover {
+
+.footer-link:hover {
   color: #6c63ff;
   text-decoration: underline;
 }
 
+/* Responsive Styles */
 @media (max-width: 900px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     padding: 0 2rem;
   }
+
+  .footer-brand-col,
+  .footer-links-col {
+    margin-bottom: 1.2rem;
+  }
 }
+
 @media (max-width: 600px) {
   .footer-section {
     padding: 2rem 0 1.2rem 0;
   }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 1.2rem;
   }
+
   .footer-brand-col {
     align-items: center;
     text-align: center;
     margin-bottom: 1.2rem;
   }
+
   .footer-logo-row {
     justify-content: center;
     width: 100%;
   }
+
   .footer-newsletter-form {
     flex-direction: column;
     align-items: stretch;
-    padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+    padding: 0.7rem;
     max-width: 100%;
     margin: 0.5rem auto 0 auto;
   }
+
   .footer-newsletter-input {
     width: 100%;
     padding: 0.7rem 0.5rem;
     margin-bottom: 0.7rem;
     font-size: 1.05rem;
   }
+
   .footer-newsletter-btn {
     width: 100%;
     border-radius: 25px;
@@ -155,17 +187,17 @@
     height: 40px;
     justify-content: center;
   }
+
   .footer-links-col {
     align-items: center;
     text-align: center;
     margin-bottom: 1.2rem;
   }
 }
-
-/* Add bottom margin to each column for spacing on mobile/tablet */
-@media (max-width: 900px) {
-  .footer-brand-col,
-  .footer-links-col {
-    margin-bottom: 1.2rem;
-  }
+.footer-logo-img {
+  height: 50px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 8px;
 }

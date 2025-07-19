@@ -1,18 +1,21 @@
 import React from 'react';
 import './Footer.css';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="footer-section">
       <div className="footer-grid">
         {/* Logo and Newsletter */}
         <div className="footer-brand-col">
           <div className="footer-logo-row">
-            <span className="footer-logo-icon">🟣</span>
-            <span className="footer-logo-text">NovaCare</span>
+            <img src="/images/company_logo.jpg" alt="NovaCare Logo" className="footer-logo-img" />
+            <span className="footer-logo-text"></span>
           </div>
           <p className="footer-desc">
-           "Empowering NovaCare with seamless technology – Your health, our priority."
+            "Empowering NovaCare with seamless technology – Your health, our priority."
           </p>
           <div className="footer-newsletter-label">Subscribe Newsletter</div>
           <form className="footer-newsletter-form">
@@ -20,29 +23,32 @@ const Footer = () => {
             <button type="submit" className="footer-newsletter-btn">→</button>
           </form>
         </div>
+
         {/* Quick Links */}
         <div className="footer-links-col">
           <div className="footer-links-title">Quick Links</div>
-          <a href="home">Home</a>
-          <a href="about-Us-Section">About-Us</a>
-          <a href="Service-Cards-Section">Services</a>
-          <a href="testimonials-Section">Articles</a>
+          <span onClick={() => navigate('/home')} className="footer-link">Home</span>
+          <span onClick={() => navigate('/about-Us-Section')} className="footer-link">About Us</span>
+          <span onClick={() => navigate('/Service-Cards-Section')} className="footer-link">Services</span>
+          <span onClick={() => navigate('/testimonials-Section')} className="footer-link">Articles</span>
         </div>
+
         {/* Utility Pages */}
         <div className="footer-links-col">
           <div className="footer-links-title">Utility Pages</div>
-          <a href="contact">Contact Us</a>
-          <a href="#">Privacy & policy</a>
-          <a href="#">Terms & conditions</a>
-          <a href="#">404 not found</a>
+          <span onClick={() => navigate('/contact')} className="footer-link">Contact Us</span>
+          <span onClick={() => navigate('/privacy-policy')} className="footer-link">Privacy & Policy</span>
+          <span onClick={() => navigate('/terms-conditions')} className="footer-link">Terms & Conditions</span>
+          <span onClick={() => navigate('/not-found')} className="footer-link">404 Not Found</span>
         </div>
+
         {/* Follow Us */}
         <div className="footer-links-col">
           <div className="footer-links-title">Follow Us</div>
-          <a href="#">Instagram</a>
-          <a href="#">Twitter / X</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Facebook</a>
+          <span onClick={() => window.open('https://instagram.com', '_blank')} className="footer-link">Instagram</span>
+          <span onClick={() => window.open('https://twitter.com', '_blank')} className="footer-link">Twitter / X</span>
+          <span onClick={() => window.open('https://linkedin.com', '_blank')} className="footer-link">LinkedIn</span>
+          <span onClick={() => window.open('https://facebook.com', '_blank')} className="footer-link">Facebook</span>
         </div>
       </div>
     </footer>

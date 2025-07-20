@@ -1,7 +1,8 @@
+/* ---------- Main Footer Styles ---------- */
 .footer-section {
   width: 100%;
   background: #fff;
-  padding: 3.5rem 0 2.5rem 0;
+  padding: 3.5rem 0 2.5rem;
   border-top: 1.5px solid #edeaff;
 }
 
@@ -12,6 +13,7 @@
   max-width: 1200px;
   margin: 0 auto;
   align-items: flex-start;
+  padding: 0 1.5rem;
 }
 
 .footer-brand-col {
@@ -30,10 +32,10 @@
 }
 
 .footer-logo-img {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 100px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 12px;
   margin-right: 8px;
 }
 
@@ -73,7 +75,7 @@
   font-size: 1rem;
   color: #222;
   outline: none;
-  flex: 1 1 0;
+  flex: 1;
   padding: 0.7rem 0;
 }
 
@@ -112,7 +114,6 @@
   margin-bottom: 0.7rem;
 }
 
-/* Use this class when replacing <a> with <span> in Footer.js */
 .footer-link {
   cursor: pointer;
   color: #444;
@@ -128,7 +129,14 @@
   text-decoration: underline;
 }
 
-/* Responsive Styles */
+.footer-logo-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Responsive Design ---------- */
+
+/* Tablets */
 @media (max-width: 900px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -138,13 +146,14 @@
 
   .footer-brand-col,
   .footer-links-col {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .footer-section {
-    padding: 2rem 0 1.2rem 0;
+    padding: 2rem 0 1.2rem;
   }
 
   .footer-grid {
@@ -193,11 +202,12 @@
     text-align: center;
     margin-bottom: 1.2rem;
   }
-}
-.footer-logo-img {
-  height: 50px;
-  width: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-right: 8px;
+
+  .footer-links-title {
+    font-size: 1.15rem;
+  }
+
+  .footer-link {
+    font-size: 1rem;
+  }
 }

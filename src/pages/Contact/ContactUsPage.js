@@ -88,7 +88,7 @@ const ContactUsPage = () => {
                 {errors.message && <div className="form-error">{errors.message.message}</div>}
               </div>
 
-              <button className="contactus-form-btn" type="submit">Send Message</button>
+              <button className="contactus-form-btn" type="submit">Send</button>
              {successMsg && <div className="form-success">{successMsg}</div>}
             </form>
           </div>

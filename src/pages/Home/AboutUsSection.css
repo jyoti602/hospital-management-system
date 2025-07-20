@@ -1,57 +1,64 @@
 .aboutus-section {
   width: 100%;
   background: #faf8ff;
-  padding: 3.5rem 0 2.5rem 0;
+  padding: 3.5rem 1.5rem 2.5rem;
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
 .aboutus-container {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 3rem;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 0 1.5rem;
 }
+
 .aboutus-img-col {
-  flex: 1.1;
+  flex: 1 1 400px;
   display: flex;
-  justify-content: flex-end;
-}
-.aboutus-img-wrap {
-  border-radius: 2.2rem;
-  border: 2.5px solid #a084ee;
-  box-shadow: 0 4px 32px 0 rgba(108, 99, 255, 0.08);
-  overflow: hidden;
-  width: 370px;
-  height: 420px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  background: #fff;
 }
+
+.aboutus-img-wrap {
+  border-radius: 2rem;
+  border: 2.5px solid #a084ee;
+  box-shadow: 0 4px 32px rgba(108, 99, 255, 0.08);
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
 .aboutus-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   border-radius: 2rem;
 }
+
 .aboutus-content-col {
-  flex: 1.3;
+  flex: 1 1 400px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.2rem;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
+
 .aboutus-label-row {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
+
 .aboutus-label {
   color: #6c63ff;
   font-weight: 600;
@@ -61,27 +68,30 @@
   border-radius: 1rem;
   letter-spacing: 0.5px;
 }
+
 .aboutus-label-underline {
   width: 60px;
   height: 3px;
   background: #a084ee;
   border-radius: 2px;
-  margin-top: 2px;
 }
+
 .aboutus-title {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #222;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 0.5rem;
 }
+
 .aboutus-desc {
   color: #555;
-  font-size: 1.13rem;
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
   max-width: 520px;
+  margin-bottom: 1.5rem;
 }
+
 .aboutus-btn {
   background: linear-gradient(90deg, #6c63ff 0%, #a084ee 100%);
   color: #fff;
@@ -90,56 +100,80 @@
   border: none;
   border-radius: 30px;
   padding: 0.7rem 2.1rem;
-  box-shadow: 0 2px 12px 0 rgba(108, 99, 255, 0.10);
+  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.10);
   cursor: pointer;
   transition: background 0.2s, color 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.5rem;
 }
+
 .aboutus-btn:hover {
   background: linear-gradient(90deg, #a084ee 0%, #6c63ff 100%);
-  color: #fff;
   transform: translateY(-2px);
 }
+
 .aboutus-btn-arrow {
-  font-size: 1.3em;
-  margin-left: 0.2em;
+  font-size: 1.25rem;
+  margin-left: 0.3rem;
+  vertical-align: middle;
 }
+
+/* ========== Responsive Design ========== */
+
 @media (max-width: 900px) {
   .aboutus-container {
     flex-direction: column;
-    gap: 2.2rem;
-    align-items: center;
-    padding: 0 0.5rem;
+    text-align: center;
+    padding: 0 1rem;
   }
-  .aboutus-img-col, .aboutus-content-col {
-    padding-left: 0;
+
+  .aboutus-img-col,
+  .aboutus-content-col {
     width: 100%;
+    padding-left: 0;
     justify-content: center;
+    align-items: center;
   }
-  .aboutus-img-wrap {
-    width: 95vw;
-    max-width: 370px;
-    height: 320px;
+
+  .aboutus-content-col {
+    align-items: center;
   }
+
   .aboutus-title {
     font-size: 2rem;
   }
-}
-@media (max-width: 600px) {
-  .aboutus-section {
-    padding: 2rem 0 1.2rem 0;
-  }
-  .aboutus-img-wrap {
-    height: 220px;
-    min-width: 0;
-    max-width: 98vw;
-  }
-  .aboutus-title {
-    font-size: 1.3rem;
-  }
+
   .aboutus-desc {
     font-size: 1rem;
+    max-width: 100%;
   }
-} 
+
+  .aboutus-btn {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutus-section {
+    padding: 2rem 1rem;
+  }
+
+  .aboutus-img-wrap {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .aboutus-title {
+    font-size: 1.5rem;
+  }
+
+  .aboutus-desc {
+    font-size: 0.95rem;
+  }
+
+  .aboutus-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}

@@ -1,6 +1,5 @@
 .login-section {
   width: 100%;
-  min-height: 100vh;
   background: #f8f8ff;
   display: flex;
   align-items: center;
@@ -121,6 +120,7 @@
 @media (max-width: 600px) {
   .login-section {
     padding: 2rem 0 1.2rem 0;
+    margin: 10px;
   }
   .login-card {
     padding: 1.2rem 0.5rem 1.2rem 0.5rem;

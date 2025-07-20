@@ -1,106 +1,103 @@
-/* BookAppointmentPage.css */
-
-/* Base styles for the overall page */
+/* Base layout styles */
 .book-appointment-page {
-  font-family: 'Inter', sans-serif; /* Using Inter as per instructions */
+  font-family: 'Inter', sans-serif;
   color: #333;
-  min-height: 100vh; /* Ensure page takes full viewport height */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Stack sections vertically */
+  flex-direction: column;
 }
 
-/* Hero Section Styling */
+/* Hero section with gradient background */
 .book-appointment-hero {
-  background: linear-gradient(to right, #6a11cb, #2575fc); /* Modern gradient background */
+  background: linear-gradient(to right, #6a11cb, #2575fc);
   color: white;
-  padding: 80px 20px; /* Increased padding for better visual appeal */
+  padding: 80px 20px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 225px; /* Ensures a decent height for the hero section */
-  box-sizing: border-box; /* Include padding in element's total width and height */
+  min-height: 250px;
+  box-sizing: border-box;
 }
 
 .book-appointment-hero-content {
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex; /* Use flex for content within hero */
-  /* flex-direction: column; Stack title, subtitle, button */
-  align-items: center; /* Center items horizontally */
-  gap: 20px; /* Spacing between elements */
-  padding: 0 15px; /* Add some horizontal padding for very small screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 15px;
 }
 
 .book-appointment-hero-title {
-  font-size: 3em; /* Larger title */
-  margin: 0; /* Reset default margin */
-  letter-spacing: 1.5px; /* Spacing for better readability */
-  line-height: 1.2;
- 
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-
-
+/* Scroll button style (optional) */
 .book-appointment-scroll-button {
-  background-color: #ffc107; /* A contrasting color for the button */
+  background-color: #ffc107;
   color: #333;
-  padding: 15px 30px;
+  padding: 14px 32px;
   border: none;
-  border-radius: 8px; /* Slightly more rounded corners */
-  font-size: 1.1em;
+  border-radius: 8px;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  font-weight: 600; /* Make text bolder */
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
-
 .book-appointment-scroll-button:hover {
-  background-color: #e0a800; /* Darker on hover */
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  background-color: #e0a800;
+  transform: translateY(-2px);
 }
 
-/* Form Wrapper Styling */
+/* Form wrapper */
 .book-appointment-form-wrapper {
-  flex-grow: 1; /* Allows the form wrapper to take available space */
-  padding: 40px 20px;
+  flex-grow: 1;
+  padding: 50px 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align form to the top of its container */
-  background-color: #f9f9f9; /* Light background for the form section */
-  box-sizing: border-box;
+  align-items: flex-start;
+  background-color: #f9f9f9;
 }
 
-/* Assuming BookAppointmentForm has a root class like 'book-appointment-form' */
-/* This targets the form component itself to control its max-width and styling */
+/* Main form container */
 .book-appointment-form-wrapper > .book-appointment-form {
   width: 100%;
-  max-width: 600px; /* Max width for the form to keep it from being too wide on large screens */
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
+/* Optional center-aligned feedback heading */
+.book-appointment-form-wrapper h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
 
-/* --- Media Queries for Responsiveness --- */
+/* Media Queries */
 
-/* For screens smaller than 768px (e.g., tablets and large phones) */
+/* For tablets */
 @media (max-width: 768px) {
   .book-appointment-hero {
     padding: 60px 15px;
-    min-height: 144px;
+    min-height: 200px;
   }
 
   .book-appointment-hero-title {
-    font-size: 2.5em; /* Adjust font size for smaller screens */
+    font-size: 2.5rem;
   }
 
   .book-appointment-scroll-button {
-    padding: 12px 25px;
-    font-size: 1em;
+    padding: 12px 28px;
+    font-size: 1rem;
   }
 
   .book-appointment-form-wrapper {
@@ -108,24 +105,25 @@
   }
 
   .book-appointment-form-wrapper > .book-appointment-form {
-    padding: 20px;
+    padding: 25px;
   }
 }
 
-/* For screens smaller than 480px (e.g., mobile phones) */
+/* For mobile phones */
 @media (max-width: 480px) {
   .book-appointment-hero {
     padding: 40px 10px;
-    min-height: 300px;
+    min-height: 160px;
   }
 
   .book-appointment-hero-title {
-    font-size: 2em; /* Further reduce font size for very small screens */
+    font-size: 2rem;
+    line-height: 1.3;
   }
 
   .book-appointment-scroll-button {
-    padding: 10px 20px;
-    font-size: 0.9em;
+    padding: 10px 24px;
+    font-size: 0.95rem;
   }
 
   .book-appointment-form-wrapper {
@@ -133,6 +131,6 @@
   }
 
   .book-appointment-form-wrapper > .book-appointment-form {
-    padding: 15px;
+    padding: 20px;
   }
 }

@@ -2,28 +2,24 @@ import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { Link, useNavigate } from 'react-router-dom'; // ✅ Corrected import
+import { Link, useNavigate } from 'react-router-dom';
 import './Signup.css';
 import { signupUser } from '../../api/authService';
 
-// ✅ Validation schema
+// Validation Schema
 const schema = Yup.object().shape({
   name: Yup.string().required('Full name is required'),
-  email: Yup.string()
-    .email('Invalid email format')
-    .required('Email is required'),
-  password: Yup.string()
-    .required('Password is required')
-    .min(5, 'Password must be at least 5 characters'),
+  email: Yup.string().email('Invalid email format').required('Email is required'),
+  password: Yup.string().min(5, 'Password must be at least 5 characters').required('Password is required'),
   confirmPassword: Yup.string()
-    .required('Please confirm your password')
-    .oneOf([Yup.ref('password')], 'Passwords do not match'),
+    .oneOf([Yup.ref('password')], 'Passwords do not match')
+    .required('Please confirm your password'),
 });
 
 const Signup = () => {
   const [submitError, setSubmitError] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const navigate = useNavigate(); // ✅ Initialize navigate
+  const navigate = useNavigate();
 
   const {
     handleSubmit,
@@ -34,35 +30,33 @@ const Signup = () => {
     resolver: yupResolver(schema),
   });
 
-const onSubmit = async (data) => {
-  try {
-    const payload = {
-      name: data.name,
-      email: data.email,
-      password: data.password,
-    };
+  const onSubmit = async (data) => {
+    try {
+      const payload = {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      };
 
-    const response = await signupUser(payload);
+      const response = await signupUser(payload);
 
-    if (response.status === 200 || response.status === 201) {
-      setSubmitted(true);
-      setSubmitError('');
-      reset();
-      navigate('/login'); // ✅ redirect to login after success
-    } 
-  } catch (error) {
-    if (error.response?.status === 409) {
-      // 👇 Extract the message sent from backend
-      setSubmitError(error.response.data.message || 'Email already registered');
-    } else if (error.response?.status === 401) {
-      setSubmitError('Unauthorized. Please check your input.');
-    } else {
-      setSubmitError('An error occurred. Please try again later.');
+      if (response.status === 200 || response.status === 201) {
+        setSubmitted(true);
+        setSubmitError('');
+        reset();
+        navigate('/login');
+      }
+    } catch (error) {
+      if (error.response?.status === 409) {
+        setSubmitError(error.response.data.message || 'Email already registered');
+      } else if (error.response?.status === 401) {
+        setSubmitError('Unauthorized. Please check your input.');
+      } else {
+        setSubmitError('An error occurred. Please try again later.');
+      }
+      setSubmitted(false);
     }
-    setSubmitted(false);
-  }
-};
-
+  };
 
   return (
     <section className="signup-section">
@@ -78,12 +72,7 @@ const onSubmit = async (data) => {
               control={control}
               defaultValue=""
               render={({ field }) => (
-                <input
-                  type="text"
-                  {...field}
-                  placeholder="Enter your full name"
-                  className={errors.name ? 'error' : ''}
-                />
+                <input type="text" placeholder="Enter your full name" {...field} className={errors.name ? 'error' : ''} />
               )}
             />
             {errors.name && <div className="form-error">{errors.name.message}</div>}
@@ -97,12 +86,7 @@ const onSubmit = async (data) => {
               control={control}
               defaultValue=""
               render={({ field }) => (
-                <input
-                  type="email"
-                  {...field}
-                  placeholder="Enter your email"
-                  className={errors.email ? 'error' : ''}
-                />
+                <input type="email" placeholder="Enter your email" {...field} className={errors.email ? 'error' : ''} />
               )}
             />
             {errors.email && <div className="form-error">{errors.email.message}</div>}
@@ -116,12 +100,7 @@ const onSubmit = async (data) => {
               control={control}
               defaultValue=""
               render={({ field }) => (
-                <input
-                  type="password"
-                  {...field}
-                  placeholder="Create a password"
-                  className={errors.password ? 'error' : ''}
-                />
+                <input type="password" placeholder="Create a password" {...field} className={errors.password ? 'error' : ''} />
               )}
             />
             {errors.password && <div className="form-error">{errors.password.message}</div>}
@@ -135,21 +114,16 @@ const onSubmit = async (data) => {
               control={control}
               defaultValue=""
               render={({ field }) => (
-                <input
-                  type="password"
-                  {...field}
-                  placeholder="Re-enter password"
-                  className={errors.confirmPassword ? 'error' : ''}
-                />
+                <input type="password" placeholder="Re-enter password" {...field} className={errors.confirmPassword ? 'error' : ''} />
               )}
             />
             {errors.confirmPassword && <div className="form-error">{errors.confirmPassword.message}</div>}
           </div>
 
           {/* Submit Button */}
-          <button className="signup-btn" type="submit">Sign Up</button>
+          <button type="submit" className="signup-btn">Sign Up</button>
 
-          {/* Submission Messages */}
+          {/* Status Messages */}
           {submitted && <div className="form-success">Account created successfully!</div>}
           {submitError && <div className="form-error">{submitError}</div>}
         </form>
